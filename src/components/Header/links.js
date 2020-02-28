@@ -4,5 +4,5 @@ export const links = [
 	generLink("/", "Головна"),
 	generLink("/history", "Історія"),
 	generLink("/memo", "Пам'ятка абітурієнту"),
-	generLink("/contacts", "Контакти"),
+	generLink("/contacts", "Контакти")
 ];
