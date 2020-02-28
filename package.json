@@ -20,7 +20,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -o",
-    "format": "prettier --write 'src/**/*.js'",
+    "prettier": "prettier --write \"src/components/**/*.js\" \"src/pages/*.js\" \"src/layouts/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

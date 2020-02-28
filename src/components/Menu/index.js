@@ -2,7 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import { Container, Tabs, TabList, Tab, TabLink } from "bloomer";
 
-const AppHeader = () => (
+const Menu = () => (
 	<Container>
 		<Tabs isAlign="centered">
 			<TabList>
@@ -20,4 +20,4 @@ const AppHeader = () => (
 	</Container>
 );
 
-export default AppHeader;
+export default Menu;
