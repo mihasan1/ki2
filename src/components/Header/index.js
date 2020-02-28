@@ -1,23 +1,32 @@
 import React from "react";
 import Link from "gatsby-link";
-import { Container, Tabs, TabList, Tab, TabLink } from "bloomer";
+import {
+	Container,
+	Tabs,
+	TabList,
+	Tab,
+	TabLink,
+	NavbarMenu,
+	NavbarStart,
+	NavbarEnd,
+	NavbarItem,
+	NavbarLink,
+	NavbarDivider,
+	Icon,
+} from "bloomer";
 
-const AppHeader = () => (
-	<Container>
-		<Tabs isAlign="centered">
-			<TabList>
-				<Tab>
-					<TabLink>This is always at the top</TabLink>
-				</Tab>
-				<Tab>
-					<Link to="/">Home</Link>
-				</Tab>
-				<Tab>
-					<Link to="/page-2/">Go to page 2</Link>
-				</Tab>
-			</TabList>
-		</Tabs>
-	</Container>
+import LinkTab from "./../LinkTab";
+
+import { links } from "./links";
+
+const Menu = () => (
+	<NavbarMenu hasTextAlign="centered">
+		<NavbarStart>
+			{links.map(({ path, description }) => (
+				<LinkTab path={path} description={description} />
+			))}
+		</NavbarStart>
+	</NavbarMenu>
 );
 
-export default AppHeader;
+export default Menu;

@@ -19,7 +19,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -o",
+    "dev": "gatsby develop -S -o",
     "prettier": "prettier --write \"src/components/**/*.js\" \"src/pages/*.js\" \"src/layouts/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
