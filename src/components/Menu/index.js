@@ -7,7 +7,7 @@ const Menu = () => (
 		<Tabs isAlign="centered">
 			<TabList>
 				<Tab>
-					<TabLink>This is always at the top</TabLink>
+					<Link to="/main/">Go to page 2</Link>
 				</Tab>
 				<Tab>
 					<Link to="/">Home</Link>
