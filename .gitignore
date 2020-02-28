@@ -4,6 +4,7 @@
 node_modules
 yarn-error.log
 .idea/
+*.beta.js
 
 # Build directory
 /public
