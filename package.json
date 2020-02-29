@@ -1,8 +1,8 @@
 {
-  "name": "synonymes-app",
-  "description": "Synonymes App",
+  "name": "kiat",
+  "description": "Kiat site",
   "version": "0.1.0",
-  "author": "Cethy <charles-elie@cethyworks.com>",
+  "author": "faramozzayw",
   "dependencies": {
     "bloomer": "^0.6.3",
     "bulma": "^0.6.2",
@@ -11,6 +11,8 @@
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-sass": "1.0.19",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -19,7 +21,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -S -o",
+    "dev": "gatsby develop -o",
     "prettier": "prettier --write \"src/components/**/*.js\" \"src/pages/*.js\" \"src/layouts/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

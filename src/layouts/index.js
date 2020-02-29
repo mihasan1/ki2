@@ -28,18 +28,6 @@ const TemplateWrapper = ({ children }) => (
 			</HeroHeader>
 
 			<HeroBody>{children()}</HeroBody>
-
-			<HeroFooter>
-				<Container>
-					<Tabs isAlign="centered">
-						<TabList>
-							<Tab>
-								<TabLink>And this at the bottom</TabLink>
-							</Tab>
-						</TabList>
-					</Tabs>
-				</Container>
-			</HeroFooter>
 		</Hero>
 		<AppFooter />
 	</div>

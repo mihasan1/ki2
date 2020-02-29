@@ -1,0 +1,27 @@
+[
+	{
+		"path": "/", 
+		"description": "Головна",
+		"icon_name": "fa fa-home fa-2x"
+	},
+	{
+		"path": "/history/", 
+		"description": "Історія",
+		"icon_name": "fa fa-book fa-2x"
+	},
+	{
+		"path": "/memo/", 
+		"description": "Пам'ятка абітурієнту",
+		"icon_name": "fa fa-question fa-2x"
+	}, 
+	{
+		"path": "/contacts/",
+		"description": "Контакти",
+		"icon_name": "fa fa-address-card fa-2x"
+	},
+	{
+		"path": "/gallery/",
+		"description": "Галерея",
+		"icon_name": "fa fa-image fa-2x"
+	}
+]

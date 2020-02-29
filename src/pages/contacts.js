@@ -38,7 +38,6 @@ const Contacts = () => (
 				<br />
 				Пн.-Пт. 8:00-16:30 без перерви.
 			</p>
-			
 		</Content>
 	</Container>
 );
