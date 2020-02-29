@@ -28,7 +28,7 @@ const Menu = () => {
 		<Navbar>
 			<NavbarBrand>
 				<NavbarItem className="brand" >
-					<span id="airplane" role="img" aria-label="airplane">
+					<span id="airplane" role="img" aria-label="airplane" >
 						&#x2708;
 					</span>
 					<Link to="/">

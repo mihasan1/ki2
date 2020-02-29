@@ -9,23 +9,33 @@
 .brand
 	font-weight: 600
 	font-style: italic
-	font-size: 25px
+	font-size: 3vmin
 	letter-spacing: 0.015rem
 	cursor: pointer
 
+	a
+		text-overflow: ellipsis
+		white-space: nowrap
+  		overflow: hidden
+
 	&:hover
 		color: $info !important
-		text-indent: 15px
-		letter-spacing: 0.05rem
+		text-indent: 1vw
+		letter-spacing: 0.05vw
 		transition: all .5s
 		
 	#airplane
 		margin-left: 1vw
 		margin-right: 1vw
-		
-		&:hover
-			offset-path: path('M20,20 C20,100 200,0 200,100')
-  			animation: move 3000ms infinite alternate ease-in-out
+
+@media screen and (max-width: 450px)
+	.brand
+		a
+			font-size: 5vmin
+
+	#airplane
+  		display: none
+
 
 
 .navbar
