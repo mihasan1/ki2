@@ -13,23 +13,28 @@ import {
 	NavbarStart,
 	NavbarEnd,
 	NavbarItem,
-	NavbarLink,
-	NavbarDivider,
-	Icon,
 } from "bloomer";
 
 import LinkTab from "./../LinkTab";
 
 import links from "./../../data/links.json";
-import logo from "./../../data/logo.jpg";
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);
+
 	const onClickNav = () => toggleMenu(!isActive);
+
 	return (
 		<Navbar>
 			<NavbarBrand>
-				<NavbarItem>Київський авіаційний технікум</NavbarItem>
+				<NavbarItem className="brand" >
+					<span id="airplane" role="img" aria-label="airplane">
+						&#x2708;
+					</span>
+					<Link to="/">
+						Київський авіаційний технікум
+					</Link>
+				</NavbarItem>
 				<NavbarBurger isActive={isActive} onClick={onClickNav} />
 			</NavbarBrand>
 			<NavbarMenu
@@ -37,7 +42,7 @@ const Menu = () => {
 				isActive={isActive}
 				onClick={onClickNav}
 			>
-				<NavbarStart>
+				<NavbarEnd>
 					{links.map(({ path, description, icon_name }) => (
 						<LinkTab
 							path={path}
@@ -46,7 +51,7 @@ const Menu = () => {
 							key={path}
 						/>
 					))}
-				</NavbarStart>
+				</NavbarEnd>
 			</NavbarMenu>
 		</Navbar>
 	);

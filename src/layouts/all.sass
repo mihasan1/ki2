@@ -1,1 +1,39 @@
 @import "~bulma"
+
+@keyframes move-airplane
+	from
+		offset-distance: 0%
+	to
+		offset-distance: 100%
+
+.brand
+	font-weight: 600
+	font-style: italic
+	font-size: 25px
+	letter-spacing: 0.015rem
+	cursor: pointer
+
+	&:hover
+		color: $info !important
+		text-indent: 15px
+		letter-spacing: 0.05rem
+		transition: all .5s
+		
+	#airplane
+		margin-left: 1vw
+		margin-right: 1vw
+		
+		&:hover
+			offset-path: path('M20,20 C20,100 200,0 200,100')
+  			animation: move 3000ms infinite alternate ease-in-out
+
+
+.navbar
+	border-bottom: 1px solid #4a4a4a
+
+.navbar-item
+	color: rgb(54, 54, 54) !important
+
+	&:hover
+		background-color: #e8e8e8
+    	color: #363636

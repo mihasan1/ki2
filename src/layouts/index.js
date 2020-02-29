@@ -21,7 +21,7 @@ import AppFooter from "../components/Footer";
 
 const TemplateWrapper = ({ children }) => (
 	<div>
-		<Helmet title="Home | Gatsby + Bulma & Bloomer" />
+		<Helmet title="Київський авіаційний технікум" />
 		<Hero isFullHeight isColor="light">
 			<HeroHeader>
 				<AppHeader />

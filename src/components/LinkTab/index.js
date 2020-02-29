@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { NavbarItem, Icon } from "bloomer";
 
 const LinkTab = ({ path, description, icon_name }) => (
-	<NavbarItem href="/">
+	<NavbarItem>
 		<Link to={path} activeClassName="has-text-success">
 			<Icon isSize="large" className={icon_name} />
 			{description}
