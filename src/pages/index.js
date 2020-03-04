@@ -16,8 +16,8 @@ const SpecialtyField = ({ title, description }) => (
 
 const IndexPage = () => {
 	const list = specialtyList.map(({ title, description }) => (
-		<li>
-			<SpecialtyField title={title} description={description} key={title} />
+		<li key={title}>
+			<SpecialtyField title={title} description={description} />
 		</li>
 	));
 

@@ -2,26 +2,50 @@
 	{
 		"path": "/", 
 		"description": "Головна",
-		"icon_name": "fa fa-home fa-2x"
+		"icon_name": "fa fa-home fa-2x",
+		"child": [
+			{
+				"path": "memo/", 
+				"description": "Пам'ятка абітурієнту",
+				"icon_name": "fa fa-question fa-2x",
+				"child": null
+			},
+			{
+				"path": "invite_rules/",
+				"description": "Правила прийому",
+				"icon_name": "",
+				"child": null
+			},
+			{
+				"path": "exams/",
+				"description": "Програма вступних іспитів",
+				"icon_name": "",
+				"child": null
+			}
+		]
 	},
 	{
 		"path": "/history/", 
 		"description": "Історія",
-		"icon_name": "fa fa-book fa-2x"
+		"icon_name": "fa fa-book fa-2x",
+		"child": null
 	},
 	{
 		"path": "/memo/", 
 		"description": "Пам'ятка абітурієнту",
-		"icon_name": "fa fa-question fa-2x"
+		"icon_name": "fa fa-question fa-2x",
+		"child": null
 	}, 
 	{
 		"path": "/contacts/",
 		"description": "Контакти",
-		"icon_name": "fa fa-address-card fa-2x"
+		"icon_name": "fa fa-address-card fa-2x",
+		"child": null
 	},
 	{
 		"path": "/gallery/",
 		"description": "Галерея",
-		"icon_name": "fa fa-image fa-2x"
+		"icon_name": "fa fa-image fa-2x",
+		"child": null
 	}
 ]
