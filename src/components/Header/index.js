@@ -1,35 +1,21 @@
 import React, { useState } from "react";
 import Link from "gatsby-link";
 import {
-	Container,
-	Tabs,
-	TabList,
-	Tab,
-	TabLink,
 	Navbar,
 	NavbarMenu,
 	NavbarBurger,
 	NavbarBrand,
-	NavbarStart,
+	NavbarDropdown,
 	NavbarEnd,
 	NavbarItem,
 } from "bloomer";
 
 import NavbarLink from "./../NavbarLink";
+import LinkDropdownGroup from "./../LinkDropdownGroup";
 
 import links from "./../../data/links.json";
 
-/*
-<NavbarItem hasDropdown isHoverable>
-    <NavbarLink href='#/documentation'>Documentation</NavbarLink>
-    <NavbarDropdown>
-        <NavbarItem href='#/'>One A</NavbarItem>
-        <NavbarItem href='#/'>Two B</NavbarItem>
-        <NavbarDivider />
-        <NavbarItem href='#/'>Two A</NavbarItem>
-    </NavbarDropdown>
-</NavbarItem>
-*/
+// TODO: rename `g` and `f` functions!
 
 const g = array => {
 	return array.map(item => {
@@ -55,21 +41,36 @@ const g = array => {
 	});
 }
 
-console.log(g(links));
+const f = array => {
+	return array.map(({ path, description, icon_name, child }) => {
+		if(Array.isArray(child)) {
+			return (
+				<LinkDropdownGroup 
+					path={path} 
+					description={description} 
+					icon_name={icon_name} 
+					key={path}
+				>{f(child)}</LinkDropdownGroup>
+			)
+		} else {
+			return (
+				<NavbarLink
+					path={path}
+					description={description}
+					icon_name={icon_name}
+					key={path}
+				/>
+			)
+		}
+	})
+}
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);
 
 	const onClickNav = () => toggleMenu(!isActive);
 
-	const navLinkList = links.map(({ path, description, icon_name }) => (
-		<NavbarLink
-			path={path}
-			description={description}
-			icon_name={icon_name}
-			key={path}
-		/>
-	));
+	const navLinkList = f(g(links));
 
 	return (
 		<Navbar>

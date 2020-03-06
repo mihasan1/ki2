@@ -7,19 +7,19 @@
 			{
 				"path": "memo/", 
 				"description": "Пам'ятка абітурієнту",
-				"icon_name": "fa fa-question fa-2x",
+				"icon_name": null,
 				"child": null
 			},
 			{
 				"path": "invite_rules/",
 				"description": "Правила прийому",
-				"icon_name": "",
+				"icon_name": null,
 				"child": null
 			},
 			{
 				"path": "exams/",
 				"description": "Програма вступних іспитів",
-				"icon_name": "",
+				"icon_name": null,
 				"child": null
 			}
 		]
