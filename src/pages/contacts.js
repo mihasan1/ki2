@@ -2,6 +2,8 @@ import React from "react";
 import Link from "gatsby-link";
 import { Container, Title, Content, Heading } from "bloomer";
 
+import GoogleMapsLocation from "./../components/GoogleMapsLocation";
+
 const space = " ";
 
 const Contacts = () => (
@@ -38,6 +40,8 @@ const Contacts = () => (
 				<br />
 				Пн.-Пт. 8:00-16:30 без перерви.
 			</p>
+
+			<GoogleMapsLocation />
 		</Content>
 	</Container>
 );
