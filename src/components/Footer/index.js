@@ -9,19 +9,10 @@ const AppFooter = () => (
 					<Column isFull>
 						<p>
 							Made with<Icon hasTextColor="danger" className="fa fa-heart" />
-							at <a href="https://cethyworks.io">cethyworks.io</a>
+							by <a href="https://github.com/faramozzayw">faramozzayw</a>
 						</p>
 					</Column>
 				</Columns>
-				<Content isSize="small">
-					<p>
-						The source code is licensed under <a target="_blank">MIT</a>.
-					</p>
-					<p>
-						The website content is licensed under{" "}
-						<a target="_blank">CC ANS 4.0</a>.
-					</p>
-				</Content>
 			</Content>
 		</Container>
 	</Footer>
