@@ -27,13 +27,11 @@ const Menu = () => {
 	return (
 		<Navbar>
 			<NavbarBrand>
-				<NavbarItem className="brand" >
-					<span id="airplane" role="img" aria-label="airplane" >
+				<NavbarItem className="brand">
+					<span id="airplane" role="img" aria-label="airplane">
 						&#x2708;
 					</span>
-					<Link to="/">
-						Київський авіаційний технікум
-					</Link>
+					<Link to="/">Київський авіаційний технікум</Link>
 				</NavbarItem>
 				<NavbarBurger isActive={isActive} onClick={onClickNav} />
 			</NavbarBrand>

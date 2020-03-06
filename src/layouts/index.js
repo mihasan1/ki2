@@ -5,17 +5,7 @@ import Helmet from "react-helmet";
 import "font-awesome/css/font-awesome.css";
 import "./all.sass";
 
-import {
-	Container,
-	Hero,
-	HeroHeader,
-	HeroBody,
-	HeroFooter,
-	Tabs,
-	TabList,
-	Tab,
-	TabLink,
-} from "bloomer";
+import { Hero, HeroHeader, HeroBody } from "bloomer";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 

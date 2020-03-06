@@ -1,6 +1,5 @@
-import React, { Fragment } from "react";
-import Link from "gatsby-link";
-import { Container, Content, Title, Heading, Subtitle } from "bloomer";
+import React from "react";
+import { Container, Content, Title, Subtitle } from "bloomer";
 
 import specialtyList from "./../data/specialtyList.json";
 
