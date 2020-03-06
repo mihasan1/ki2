@@ -41,12 +41,14 @@ const g = array => {
 		if(Array.isArray(child)) {
 			newItem.child = child.map(({ path, ...other }) => {
 				const newPath = parentPath.concat(path);
-				console.log("newPath", newPath);
 
 				return { path: newPath, ...other };
 			});
 
-			return newItem;
+			return {
+				...newItem,
+				child: g(newItem.child),
+			};
 		} else {
 			return newItem;
 		}
@@ -60,7 +62,7 @@ const Menu = () => {
 
 	const onClickNav = () => toggleMenu(!isActive);
 
-	const navLinkList = g(links).map(({ path, description, icon_name, child }) => (
+	const navLinkList = links.map(({ path, description, icon_name }) => (
 		<NavbarLink
 			path={path}
 			description={description}

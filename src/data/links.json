@@ -29,12 +29,6 @@
 		"description": "Історія",
 		"icon_name": "fa fa-book fa-2x",
 		"child": null
-	},
-	{
-		"path": "/memo/", 
-		"description": "Пам'ятка абітурієнту",
-		"icon_name": "fa fa-question fa-2x",
-		"child": null
 	}, 
 	{
 		"path": "/contacts/",
