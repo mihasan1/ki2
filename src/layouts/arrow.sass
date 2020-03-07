@@ -1,0 +1,25 @@
+.arrow
+	display: flex
+	align-items: baseline
+	padding-right: 8px
+	
+	&:hover
+		background-color: rgb(232, 232, 232) !important
+
+	> .navbar-item
+		padding-right: 0
+	
+	> .icon
+		cursor: pointer
+		opacity: 0.9
+		margin: 2%
+		color: $primary !important
+		
+		&:hover
+			background-color: rgb(232, 232, 232) !important
+			color: $info !important
+			opacity: 1
+			transform: scale(1.25)
+			border-radius: 50%
+			border: 1px dashed black
+			transition: all .25s
