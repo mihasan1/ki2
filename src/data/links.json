@@ -8,7 +8,14 @@
 				"path": "memo/", 
 				"description": "Пам'ятка абітурієнту",
 				"icon_name": null,
-				"child": null
+				"child": [
+					{
+						"path": "memo/", 
+						"description": "Пам'ятка абітурієнту",
+						"icon_name": null,
+						"child": null
+					}
+				]
 			},
 			{
 				"path": "invite_rules/",
