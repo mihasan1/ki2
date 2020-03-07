@@ -3,18 +3,22 @@ import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import { NavbarItem, Icon } from "bloomer";
 
-const LinkTab = ({ path, description, icon_name }) => (
+const NavbarLink = ({ path, description, icon_name }) => (
 	<NavbarItem>
 		<Link to={path} activeClassName="has-text-success">
-			<Icon isSize="large" className={icon_name} />
+			{ icon_name !== null && <Icon isSize="large" className={icon_name} /> }
 			{description}
 		</Link>
 	</NavbarItem>
 );
 
-LinkTab.propTypes = {
+NavbarLink.propTypes = {
 	path: PropTypes.string.isRequired,
 	description: PropTypes.string.isRequired,
+	icon_name: PropTypes.oneOfType([
+		() => null,
+		PropTypes.string
+	])
 };
 
-export default LinkTab;
+export default NavbarLink;
