@@ -84,9 +84,8 @@ const Menu = () => {
 				<NavbarBurger isActive={isActive} onClick={onClickNav} />
 			</NavbarBrand>
 			<NavbarMenu
-				hasTextAlign="centered"
+				hasTextAlign="left"
 				isActive={isActive}
-				onClick={onClickNav}
 			>
 				<NavbarEnd>{navLinkList}</NavbarEnd>
 			</NavbarMenu>
