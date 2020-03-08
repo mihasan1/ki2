@@ -1,6 +1,6 @@
 [
 	{
-		"path": "/", 
+		"path": "main/", 
 		"description": "Головна",
 		"icon_name": "fa fa-home fa-2x",
 		"child": [
@@ -8,14 +8,7 @@
 				"path": "memo/", 
 				"description": "Пам'ятка абітурієнту",
 				"icon_name": null,
-				"child": [
-					{
-						"path": "memo/", 
-						"description": "Пам'ятка абітурієнту",
-						"icon_name": null,
-						"child": null
-					}
-				]
+				"child": null
 			},
 			{
 				"path": "invite_rules/",
@@ -35,7 +28,26 @@
 		"path": "/history/", 
 		"description": "Історія",
 		"icon_name": "fa fa-book fa-2x",
-		"child": null
+		"child": [
+			{
+				"path": "memo/", 
+				"description": "Пам'ятка абітурієнту",
+				"icon_name": null,
+				"child": null
+			},
+			{
+				"path": "invite_rules/",
+				"description": "Правила прийому",
+				"icon_name": null,
+				"child": null
+			},
+			{
+				"path": "exams/",
+				"description": "Програма вступних іспитів",
+				"icon_name": null,
+				"child": null
+			}
+		]
 	}, 
 	{
 		"path": "/contacts/",

@@ -5,7 +5,7 @@ import { NavbarItem, Icon } from "bloomer";
 
 const NavbarLink = ({ path, description, icon_name }) => (
 	<NavbarItem>
-		<Link to={path} activeClassName="has-text-success">
+		<Link to={path} activeClassName="has-text-success" partiallyActive={true} >
 			{ icon_name !== null && <Icon isSize="large" className={icon_name} /> }
 			{description}
 		</Link>
