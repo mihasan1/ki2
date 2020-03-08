@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
 				<AppHeader />
 			</HeroHeader>
 
-			<HeroBody>{children()}</HeroBody>
+			<HeroBody id={location.pathname === "/" ? "sky" : ""}>{children()}</HeroBody>
 		</Hero>
 		<AppFooter />
 	</div>

@@ -1,0 +1,79 @@
+svg
+	max-width: 100%
+	height: auto
+	display: block
+	
+#sky
+	background-color: #85b9dd
+	background: -webkit-linear-gradient(top, #85b9dd, #85b9dd, #ffffff)
+	width: 100%
+	height: 100%
+	overflow: hidden
+	position: relative
+	padding: 0
+
+.cloud
+	position: absolute
+	background-image: url('https://www.dl.dropboxusercontent.com/s/31ivp5fsjcgytgp/cloud1.png')
+	background-repeat: no-repeat
+	width: 300px
+	height: 150px
+	top: 20%
+	right: 0
+	opacity: 1
+	animation: cloud-movement 8s linear forwards infinite
+
+	&.massive
+		width: 600px
+		margin-top: 20px
+		margin-right: 0
+
+	&.big
+		width: 500px
+		margin-top: 50px
+		margin-right: 150px
+	
+	&.medium
+		margin-right: 200px
+  		width: 150px
+
+	&.small
+		margin-right: 400px
+		width: 100px
+		margin-top: 50px
+
+	&.front 
+	  	z-index: 9
+	
+	&.distant
+	  	z-index: 1
+	
+	&.background
+	 	z-index: 1
+
+	&.slow
+		animation-duration: 10s
+
+	&.slower
+		animation-duration: 12s
+	
+	&.slowest
+		animation-duration: 14s
+	
+	&.super-slow
+		animation-duration: 22s
+
+@keyframes cloud-movement
+	from
+		opacity: .1
+		transform: translateX(300px)
+
+	10%
+		opacity: .7
+
+	90%
+		opacity: 0
+
+	to
+		opacity: 0
+		transform: translateX(-1000px)
