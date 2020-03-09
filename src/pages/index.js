@@ -1,12 +1,21 @@
 import React from "react";
 import Cloud from "./../components/Cloud";
+import Airplane from "./../components/Airplane";
+
+const Clouds = ({ children }) => <div className="clouds">{children}</div>;
 
 const IndexPage = () => (
 	<div>
-		<Cloud isSize="medium" isSpeed="slower" />
-		<Cloud isSize="massive" isSpeed="slowest" />
-		<Cloud isSize="medium" isSpeed="slow" />
-		<Cloud isSize="big" isSpeed="super-slow" />
+		<Airplane />
+		<Clouds>
+			<Cloud isSize="medium" isSpeed="slower" />
+			<Cloud isSize="massive" isSpeed="slowest" />
+			<Cloud isSize="big" isSpeed="super-slow" />
+			<Cloud isSize="big" isSpeed="super-slow" />
+			<Cloud isSize="big" isSpeed="super-slow" />
+			<Cloud isSize="medium" isSpeed="slow" />
+			<Cloud isSize="big" isSpeed="super-slow" />
+		</Clouds>
 	</div>
 );
 
