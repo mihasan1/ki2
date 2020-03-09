@@ -13,7 +13,7 @@ import {
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, location }) => (
 	<div>
 		<Helmet title="Київський авіаційний технікум" />
 		<Hero isFullHeight isColor="light">

@@ -10,15 +10,15 @@ const Airplane = ({ width  = "1300", height = "900" }) => (
     		width={`${width}px`}
     		height={`${height}px`}
     		viewBox={`0 0 ${width} ${height}`}
-    		enable-background={`new 0 0 ${width} ${height}`}
+    		enableBackground={`new 0 0 ${width} ${height}`}
     		space="preserve" 
     		className="airplane"
     	>
             <defs>
                 <linearGradient id="airplane-gradient">
-                    <stop offset="0%" stop-color="var(--color-stop-start)" />
-                    <stop offset="50%" stop-color="var(--color-stop-midlle)" />
-                    <stop offset="90%" stop-color="var(--color-stop-finish)" />
+                    <stop offset="0%" stopColor="var(--color-stop-start)" />
+                    <stop offset="50%" stopColor="var(--color-stop-midlle)" />
+                    <stop offset="90%" stopColor="var(--color-stop-finish)" />
                 </linearGradient>
             </defs>
 

@@ -9,10 +9,10 @@ const IndexPage = () => (
 		<Airplane />
 		<Clouds>
 			<Cloud isSize="medium" isSpeed="slower" />
-			<Cloud isSize="massive" isSpeed="slowest" />
+			<Cloud isSize="massive" isSpeed="slowest" isDistance="distant" />
 			<Cloud isSize="big" isSpeed="super-slow" />
 			<Cloud isSize="big" isSpeed="super-slow" />
-			<Cloud isSize="big" isSpeed="super-slow" />
+			<Cloud isSize="big" isSpeed="super-slow" isDistance="background" />
 			<Cloud isSize="medium" isSpeed="slow" />
 			<Cloud isSize="big" isSpeed="super-slow" />
 		</Clouds>

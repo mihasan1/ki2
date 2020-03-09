@@ -17,7 +17,7 @@ const Cloud = ({ isSize = "small", isSpeed = "slow", isDistance = "front", width
 		width={`${width}px`}
 		height={`${height}px`}
 		viewBox="0 0 762 331" 
-		enable-background="new 0 0 762 331" 
+		enableBackground="new 0 0 762 331" 
 		space="preserve" 
 		className={`cloud ${isSize} ${isSpeed} ${isDistance}`}
 	>
