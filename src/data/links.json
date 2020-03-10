@@ -14,7 +14,7 @@
 	{
 		"path": "/abiturient",
 		"description": "Абітурієнту",
-		"icon_name": "",
+		"icon_name": "fa fa-users fa-2x",
 		"child" :[
 			{
 				"path":"/memo",
@@ -39,7 +39,7 @@
 	{
 		"path":"/student",
 		"description":"Студенту",
-		"icon_name":"fa fa-users fa-2x",
+		"icon_name":"fa fa-graduation-cap fa-2x",
 		"child":[
 			{
 				"path":"/student_rules",
@@ -70,7 +70,7 @@
 	{
 		"path":"/for_parents",
 		"description":"Батькам",
-		"icon_name":null,
+		"icon_name":"fa fa-user-circle fa-2x",
 		"child":[
 		{
 				"path":"/priymalna_komisiya",
