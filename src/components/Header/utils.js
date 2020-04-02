@@ -54,5 +54,4 @@ const generateNavigator = array => {
 };
 
 
-export const f = config => generateNavigator(proccess(config))
-console.log("f", f);
+export const createMenu = config => generateNavigator(proccess(config))

@@ -13,16 +13,16 @@ import {
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-import links from "./../../data/links.json";
+import navbar from "./../../data/navbar.json";
 
-import { f } from "./utils"
+import { createMenu } from "./utils"
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);
 
 	const onClickNav = () => toggleMenu(!isActive);
 
-	const navLinkList = f(links);
+	const navLinkList = createMenu(navbar.menu);
 
 	return (
 		<Navbar>
@@ -31,7 +31,7 @@ const Menu = () => {
 					<span id="airplane" role="img" aria-label="airplane">
 						&#x2708;
 					</span>
-					<Link to="/">Київський авіаційний технікум</Link>
+					<Link to="/">{navbar.title}</Link>
 				</NavbarItem>
 				<NavbarBurger isActive={isActive} onClick={onClickNav} />
 			</NavbarBrand>
