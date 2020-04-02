@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { NavbarItem, Icon } from "bloomer";
 
 const NavbarLink = ({ path, description, icon_name }) => (
-	<NavbarItem>
-		<Link to={path} activeClassName="has-text-success" >
-			{ icon_name !== null && <Icon isSize="large" className={icon_name} /> }
+	<NavbarItem className={icon_name === "" ? "without-icon" : ""}>
+		<Link to={path} activeClassName="has-text-success">
+			{icon_name !== null && <Icon isSize="large" className={icon_name} />}
 			{description}
 		</Link>
 	</NavbarItem>
@@ -15,10 +15,7 @@ const NavbarLink = ({ path, description, icon_name }) => (
 NavbarLink.propTypes = {
 	path: PropTypes.string.isRequired,
 	description: PropTypes.string.isRequired,
-	icon_name: PropTypes.oneOfType([
-		() => null,
-		PropTypes.string
-	])
+	icon_name: PropTypes.oneOfType([() => null, PropTypes.string]),
 };
 
 export default NavbarLink;

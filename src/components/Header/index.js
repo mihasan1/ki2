@@ -15,62 +15,14 @@ import LinkDropdownGroup from "./../LinkDropdownGroup";
 
 import links from "./../../data/links.json";
 
-// TODO: rename `g` and `f` functions!
-
-const g = array => {
-	return array.map(item => {
-		const newItem = { ...item };
-		
-		const { child } = newItem;
-		const parentPath = newItem.path;
-
-		if(Array.isArray(child)) {
-			newItem.child = child.map(({ path, ...other }) => {
-				const newPath = parentPath.concat(path);
-
-				return { path: newPath, ...other };
-			});
-
-			return {
-				...newItem,
-				child: g(newItem.child),
-			};
-		} else {
-			return newItem;
-		}
-	});
-}
-
-const f = array => {
-	return array.map(({ path, description, icon_name, child }) => {
-		if(Array.isArray(child)) {
-			return (
-				<LinkDropdownGroup 
-					path={path} 
-					description={description} 
-					icon_name={icon_name} 
-					key={path}
-				>{f(child)}</LinkDropdownGroup>
-			)
-		} else {
-			return (
-				<NavbarLink
-					path={path}
-					description={description}
-					icon_name={icon_name}
-					key={path}
-				/>
-			)
-		}
-	})
-}
+import { f } from "./utils"
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);
 
 	const onClickNav = () => toggleMenu(!isActive);
 
-	const navLinkList = f(g(links));
+	const navLinkList = f(links);
 
 	return (
 		<Navbar>
@@ -83,10 +35,7 @@ const Menu = () => {
 				</NavbarItem>
 				<NavbarBurger isActive={isActive} onClick={onClickNav} />
 			</NavbarBrand>
-			<NavbarMenu
-				hasTextAlign="left"
-				isActive={isActive}
-			>
+			<NavbarMenu hasTextAlign="left" isActive={isActive}>
 				<NavbarEnd>{navLinkList}</NavbarEnd>
 			</NavbarMenu>
 		</Navbar>
