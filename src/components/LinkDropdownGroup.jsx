@@ -19,9 +19,11 @@ const LinkDropdownGroup = ({ path, description, icon_name, children }) => {
 
 	return (
 		<NavbarItem hasDropdown isHoverable={false} isActive={showStatus}>
-			<div className="arrow">
+			<div className="arrow" onClick={() => updateShowStatus(!showStatus)}>
+
 				<Item description={description} icon_name={icon_name} />
-				<OpenDropdownButton fn={updateShowStatus} status={showStatus} />
+				<OpenDropdownButton fn={() =>{}} status={showStatus} />
+			
 			</div>
 			<NavbarDropdown isHidden={!showStatus}>
 				{ children }
