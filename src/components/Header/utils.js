@@ -12,9 +12,14 @@ const proccess = array => {
 
 		if (Array.isArray(child)) {
 			newItem.child = child.map(({ path, ...other }) => {
-				const newPath = parentPath.concat(path);
+				const newPath = parentPath.concat(
+					`/${path}`
+				);
 
-				return { path: newPath, ...other };
+				return { 
+					path: newPath, 
+					...other 
+				};
 			});
 
 			return {
@@ -22,7 +27,10 @@ const proccess = array => {
 				child: proccess(newItem.child),
 			};
 		} else {
-			return newItem;
+			return {
+				...newItem,
+				path: `/${parentPath}`
+			};
 		}
 	});
 };
