@@ -1,49 +1,45 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-import { Container, Content, Title, Subtitle } from "bloomer";
-
-import specialtyList from "./../data/specialtyList.json";
+import { Container, Box } from "bloomer";
 
 import Layout from "./../layouts/Layout";
-
-const SpecialtyField = ({ title, description }) => (
-	<div>
-		<Subtitle isSize={6} className="has-text-left">
-			{title}
-		</Subtitle>
-		<p className="has-text-left">{description}</p>
-		<br />
-	</div>
-);
+import NewsPreview from "./../components/NewsPreview";
 
 const MainPage = ({ location }) => {
-	const list = specialtyList.map(({ title, description }) => (
-		<li key={title}>
-			<SpecialtyField title={title} description={description} />
-		</li>
-	));
+	const { edges } = useStaticQuery(graphql`
+		{
+			allMarkdownRemark(filter: {
+				frontmatter: {
+					path: { ne: null },
+					date: { ne: null }
+				}
+			}) {
+				edges {
+					node {
+						html
+						frontmatter {
+							date(formatString: "D MMMM, YYYY", locale: "uk_UA")
+							path
+							title
+						}
+					}
+				}
+			}
+		}
+	`).allMarkdownRemark;
+
+	const news = edges.map(({ node }, index) => {
+		let { html, frontmatter } = node;
+		return <NewsPreview html={html} {...frontmatter} key={index} />
+	});
 
 	return (
 		<Layout location={location} >
-			<Container hasTextAlign="centered">
-				<Content>
-					<Title>КИЇВСЬКИЙ АВІАЦІЙНИЙ ТЕХНІКУМ у комплексі:</Title>
-					<Subtitle isSize={5}>
-						<br />
-						Національного аерокосмічного університету їм . Жуковського (ХАІ),
-						Сумського національного аграрного університету
-						<br />
-						<br />
-						ЗАПРОШУЄ
-					</Subtitle>
-					<Subtitle isSize={6}>
-						на навчання випускників шкіл та професійно-технічних закладів на
-						2020-2021 н.р. на основі базової загальної середньої освіти (9 класів)
-						та повної загальної середньої освіти (11 класів), або наявності
-						диплому кваліфікованого робітника за спеціальностями:
-					</Subtitle>
-					<ol>{list}</ol>
-				</Content>
+			<Container>
+				<Box>
+					{news}
+				</Box>
 			</Container>
 		</Layout>
 	);
