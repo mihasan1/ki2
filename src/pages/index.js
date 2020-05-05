@@ -2,10 +2,12 @@ import React from "react";
 import Cloud from "./../components/Cloud";
 import Airplane from "./../components/Airplane";
 
+import Layout from "./../layouts/Layout";
+
 const Clouds = ({ children }) => <div className="clouds">{children}</div>;
 
-const IndexPage = () => (
-	<div>
+const IndexPage = ({ location }) => (
+	<Layout location={location} >
 		<Airplane />
 		<Clouds>
 			<Cloud isSize="medium" isSpeed="slower" />
@@ -16,7 +18,7 @@ const IndexPage = () => (
 			<Cloud isSize="medium" isSpeed="slow" />
 			<Cloud isSize="big" isSpeed="super-slow" />
 		</Clouds>
-	</div>
+	</Layout>
 );
 
 export default IndexPage;

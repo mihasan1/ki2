@@ -4,6 +4,8 @@ import { Container, Content, Title, Subtitle } from "bloomer";
 
 import specialtyList from "./../data/specialtyList.json";
 
+import Layout from "./../layouts/Layout";
+
 const SpecialtyField = ({ title, description }) => (
 	<div>
 		<Subtitle isSize={6} className="has-text-left">
@@ -14,7 +16,7 @@ const SpecialtyField = ({ title, description }) => (
 	</div>
 );
 
-const MainPage = () => {
+const MainPage = ({ location }) => {
 	const list = specialtyList.map(({ title, description }) => (
 		<li key={title}>
 			<SpecialtyField title={title} description={description} />
@@ -22,26 +24,28 @@ const MainPage = () => {
 	));
 
 	return (
-		<Container hasTextAlign="centered">
-			<Content>
-				<Title>КИЇВСЬКИЙ АВІАЦІЙНИЙ ТЕХНІКУМ у комплексі:</Title>
-				<Subtitle isSize={5}>
-					<br />
-					Національного аерокосмічного університету їм . Жуковського (ХАІ),
-					Сумського національного аграрного університету
-					<br />
-					<br />
-					ЗАПРОШУЄ
-				</Subtitle>
-				<Subtitle isSize={6}>
-					на навчання випускників шкіл та професійно-технічних закладів на
-					2020-2021 н.р. на основі базової загальної середньої освіти (9 класів)
-					та повної загальної середньої освіти (11 класів), або наявності
-					диплому кваліфікованого робітника за спеціальностями:
-				</Subtitle>
-				<ol>{list}</ol>
-			</Content>
-		</Container>
+		<Layout location={location} >
+			<Container hasTextAlign="centered">
+				<Content>
+					<Title>КИЇВСЬКИЙ АВІАЦІЙНИЙ ТЕХНІКУМ у комплексі:</Title>
+					<Subtitle isSize={5}>
+						<br />
+						Національного аерокосмічного університету їм . Жуковського (ХАІ),
+						Сумського національного аграрного університету
+						<br />
+						<br />
+						ЗАПРОШУЄ
+					</Subtitle>
+					<Subtitle isSize={6}>
+						на навчання випускників шкіл та професійно-технічних закладів на
+						2020-2021 н.р. на основі базової загальної середньої освіти (9 класів)
+						та повної загальної середньої освіти (11 класів), або наявності
+						диплому кваліфікованого робітника за спеціальностями:
+					</Subtitle>
+					<ol>{list}</ol>
+				</Content>
+			</Container>
+		</Layout>
 	);
 };
 

@@ -7,12 +7,14 @@
     "bloomer": "^0.6.3",
     "bulma": "^0.6.2",
     "font-awesome": "^4.7.0",
-    "gatsby": "^1.9.241",
-    "gatsby-link": "^1.6.39",
+    "gatsby": "^2.21.12",
+    "gatsby-link": "^2.4.1",
     "gatsby-plugin-react-helmet": "^2.0.8",
-    "gatsby-plugin-sass": "1.0.19",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "gatsby-plugin-sass": "^2.3.1",
+    "gatsby-source-filesystem": "^2.3.1",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -21,7 +23,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -o",
+    "dev": "gatsby develop",
+    "dev_o": "gatsby develop -o",
     "prettier": "prettier --write \"src/components/**/*.js\" \"src/pages/*.js\" \"src/layouts/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

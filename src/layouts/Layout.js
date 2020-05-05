@@ -13,7 +13,7 @@ import {
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 
-const TemplateWrapper = ({ children, location }) => (
+const Layout = ({ children, location }) => (
 	<div>
 		<Helmet title="Київський авіаційний технікум" />
 		<Hero isFullHeight isColor="light">
@@ -21,14 +21,14 @@ const TemplateWrapper = ({ children, location }) => (
 				<AppHeader />
 			</HeroHeader>
 
-			<HeroBody id={location.pathname === "/" ? "sky" : ""}>{children()}</HeroBody>
+			<HeroBody id={location.pathname === "/" ? "sky" : ""}>{children}</HeroBody>
 		</Hero>
 		<AppFooter />
 	</div>
 );
 
-TemplateWrapper.propTypes = {
+Layout.propTypes = {
 	children: PropTypes.func,
 };
 
-export default TemplateWrapper;
+export default Layout;
