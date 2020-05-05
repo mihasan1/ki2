@@ -1,7 +1,12 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { Container, Box } from "bloomer";
+import {
+	Container,
+	Box,
+	Columns,
+	Column,
+} from "bloomer";
 
 import Layout from "./../layouts/Layout";
 import NewsPreview from "./../components/NewsPreview";
@@ -9,7 +14,10 @@ import NewsPreview from "./../components/NewsPreview";
 const MainPage = ({ location }) => {
 	const { edges } = useStaticQuery(graphql`
 		{
-			allMarkdownRemark(filter: {
+			allMarkdownRemark(sort: {
+				fields: frontmatter___date, 
+				order: DESC
+			}, filter: {
 				frontmatter: {
 					path: { ne: null },
 					date: { ne: null }
@@ -31,14 +39,20 @@ const MainPage = ({ location }) => {
 
 	const news = edges.map(({ node }, index) => {
 		let { html, frontmatter } = node;
-		return <NewsPreview html={html} {...frontmatter} key={index} />
+		return (
+			<Column isSize="1/3">
+				<NewsPreview html={html} {...frontmatter} key={index} />
+			</Column>
+		);
 	});
 
 	return (
 		<Layout location={location}>
 			<Container>
 				<Box>
-					{news}
+					<Columns isGrid isMultiline isCentered isVCentered>
+						{news}
+					</Columns>
 				</Box>
 			</Container>
 		</Layout>
