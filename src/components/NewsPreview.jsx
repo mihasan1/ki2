@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "gatsby-link";
+import { Link } from "gatsby"
 
 import { 
 	Card,
@@ -11,7 +11,11 @@ import {
 	Image,
 	Media,
 	Content,
+	CardFooter,
+	CardFooterItem,
 } from "bloomer";
+
+const toPreviewText = (str, begin = 0, end = 150, suspensionPoints = "...") => str.slice(begin, end).concat(suspensionPoints)
 
 const NewsPreview = ({ title, date, path, html, image }) => {
 	return (
@@ -19,9 +23,10 @@ const NewsPreview = ({ title, date, path, html, image }) => {
 			<Card>
 				<CardHeader>
 					<CardHeaderTitle>
-						{title}
+						{ !!title ? title : "Новина без назви - просто новина" }
 					</CardHeaderTitle>
 				</CardHeader>
+
 				{
 					!!image && (
 						<CardImage>
@@ -29,15 +34,24 @@ const NewsPreview = ({ title, date, path, html, image }) => {
 						</CardImage>
 					)
 				}
+
 				<CardContent>
 					<Content>
 						<div
-							dangerouslySetInnerHTML={{ __html: html }}
+							dangerouslySetInnerHTML={{ __html: toPreviewText(html) }}
 						/>
 						<br/>
-						<small>Дата публікації: {date}</small>
 					</Content>
 				</CardContent>
+				
+				<CardFooter>
+					<CardFooterItem hasTextAlign="left">
+						<small>Дата публікації: {date}</small>
+					</CardFooterItem>
+					<CardFooterItem>
+						<Link to={path}>Читати більше...</Link>
+					</CardFooterItem>
+				</CardFooter>
 			</Card>
 		</div>
 	);

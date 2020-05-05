@@ -3,6 +3,9 @@
 @import "styles/sky.sass"
 @import "styles/keyframes.sass"
 
+*:focus
+	outline: 1px solid blue
+
 .brand
 	font-weight: 600
 	font-style: italic
@@ -59,7 +62,17 @@
 		flex-flow: row
 		align-items: center
 
+
 .NewsPreview
 	.card
 		margin-block-start: 2vmax
 		margin-block-end: 2vmax
+	.card-footer
+		border-top: 0
+
+		.card-footer-item:first-child
+			border-right: 0
+
+		.card-footer-item:last-child
+			border-top: 1px solid #dbdbdb;
+			border-radius: 50% 0 0

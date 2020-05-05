@@ -1,5 +1,5 @@
 ---
-path: "/blog/my-first-post"
+path: "/news/news-1"
 date: "2019-05-14"
 title: "Запрошуємо на навчання!"
 ---

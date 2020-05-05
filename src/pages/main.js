@@ -35,7 +35,7 @@ const MainPage = ({ location }) => {
 	});
 
 	return (
-		<Layout location={location} >
+		<Layout location={location}>
 			<Container>
 				<Box>
 					{news}
