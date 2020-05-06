@@ -34,7 +34,7 @@ const NewsTemplate = ({ data, location }) => {
 							<br/>
 						</Content>
 						
-						<small>Дата публікації: {date}</small>
+						<small>Дата публікації: <time>{date}</time></small>
 					</Box>
 				</Box>
 			</Container>
