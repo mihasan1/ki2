@@ -13,7 +13,7 @@ import NewsPreview from "./../components/NewsPreview";
 
 const MainPage = ({ location }) => {
 	const { edges } = useStaticQuery(graphql`
-		{
+		query {
 			allMarkdownRemark(sort: {
 				fields: frontmatter___date, 
 				order: DESC
@@ -40,7 +40,7 @@ const MainPage = ({ location }) => {
 	const news = edges.map(({ node }, index) => {
 		let { html, frontmatter } = node;
 		return (
-			<Column isSize="1/3">
+			<Column isSize="1/2">
 				<NewsPreview html={html} {...frontmatter} key={index} />
 			</Column>
 		);
@@ -49,11 +49,9 @@ const MainPage = ({ location }) => {
 	return (
 		<Layout location={location}>
 			<Container>
-				<Box>
-					<Columns isGrid isMultiline isCentered isVCentered>
-						{news}
-					</Columns>
-				</Box>
+				<Columns isGrid isMultiline isCentered>
+					{news}
+				</Columns>
 			</Container>
 		</Layout>
 	);

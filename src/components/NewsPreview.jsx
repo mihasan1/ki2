@@ -49,8 +49,10 @@ const NewsPreview = ({ title, date, path, html, image }) => {
 						<small>Дата публікації: {date}</small>
 					</CardFooterItem>
 					<CardFooterItem>
-						<Button isColor="light">
-							<Link to={path}>Читати більше...</Link>
+						<Button isColor="light" isPaddingless isLink>
+							<Link style={{
+								padding: "0.75rem"
+							}} to={path}>Читати більше...</Link>
 						</Button>
 					</CardFooterItem>
 				</CardFooter>
