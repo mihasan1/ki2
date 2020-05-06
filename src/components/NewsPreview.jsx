@@ -9,10 +9,10 @@ import {
 	CardContent,
 	CardImage,
 	Image,
-	Media,
 	Content,
 	CardFooter,
 	CardFooterItem,
+	Button,
 } from "bloomer";
 
 const toPreviewText = (str, begin = 0, end = 150, suspensionPoints = "...") => str.slice(begin, end).concat(suspensionPoints)
@@ -49,7 +49,9 @@ const NewsPreview = ({ title, date, path, html, image }) => {
 						<small>Дата публікації: {date}</small>
 					</CardFooterItem>
 					<CardFooterItem>
-						<Link to={path}>Читати більше...</Link>
+						<Button isColor="light">
+							<Link to={path}>Читати більше...</Link>
+						</Button>
 					</CardFooterItem>
 				</CardFooter>
 			</Card>
