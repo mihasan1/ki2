@@ -19,6 +19,13 @@ module.exports = {
 				path: `${__dirname}/src/data/students`,
 			},
 		},
-		`gatsby-transformer-remark`,
+		//`gatsby-transformer-remark`,
+		//`gatsby-remark-grid-tables`,
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [`@pauliescanlon/gatsby-remark-sticky-table`]
+			},
+		},
 	],
 };

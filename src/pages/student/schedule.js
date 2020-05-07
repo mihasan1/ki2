@@ -5,10 +5,10 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "./../../layouts/Layout";
 
-const StudentRules = ({ location }) => {
+const Schedule = ({ location }) => {
 	const { html } = useStaticQuery(graphql`
 		query {
-			markdownRemark(fileAbsolutePath: {regex: "/student_rules/"}) {
+			markdownRemark(fileAbsolutePath: {regex: "/schedule/"}) {
 				html
 			}
 		}
@@ -27,4 +27,4 @@ const StudentRules = ({ location }) => {
 	);
 }
 
-export default StudentRules;
+export default Schedule;
