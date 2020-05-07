@@ -3,9 +3,12 @@ import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import { NavbarItem, Icon } from "bloomer";
 
-const NavbarLink = ({ path, description, icon_name }) => (
-	<NavbarItem className={icon_name === "" ? "without-icon" : ""}>
-		<Link to={path} activeClassName="has-text-success">
+const NavbarLink = ({ path, description, icon_name, ...others }) => (
+	<NavbarItem className={icon_name === "" ? "without-icon" : ""} { ...others }>
+		<Link 
+			to={path}
+			activeClassName="has-text-success"
+		>
 			{icon_name !== null && <Icon isSize="large" className={icon_name} />}
 			{description}
 		</Link>

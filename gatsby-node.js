@@ -18,7 +18,8 @@ exports.createPages = async ({
 				frontmatter: {
 					path: { ne: null },
 					date: { ne: null }
-				}
+				},
+				fileAbsolutePath: { regex: "/news/" }
 			}) {
 				edges {
 					node {

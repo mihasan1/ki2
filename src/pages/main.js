@@ -21,7 +21,8 @@ const MainPage = ({ location }) => {
 				frontmatter: {
 					path: { ne: null },
 					date: { ne: null }
-				}
+				},
+				fileAbsolutePath: { regex: "/news/" }
 			}) {
 				edges {
 					node {

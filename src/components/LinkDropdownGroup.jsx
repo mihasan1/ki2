@@ -15,11 +15,19 @@ const OpenDropdownButton = ({ fn, status }) => (
 )
 
 const LinkDropdownGroup = ({ path, description, icon_name, children }) => {
-	const [showStatus, updateShowStatus] = useState(false)
+	const [showStatus, updateShowStatus] = useState(false);
+
+	const toggleDropdown = () => updateShowStatus(!showStatus)
 
 	return (
-		<NavbarItem hasDropdown isHoverable={false} isActive={showStatus}>
-			<div className="arrow" onClick={() => updateShowStatus(!showStatus)}>
+		<NavbarItem
+			hasDropdown
+			isHoverable={false}
+			isActive={showStatus}
+			tabIndex={0}
+			onKeyDown={toggleDropdown}
+		>
+			<div className="arrow" onClick={toggleDropdown}>
 
 				<Item description={description} icon_name={icon_name} />
 				<OpenDropdownButton fn={() =>{}} status={showStatus} />

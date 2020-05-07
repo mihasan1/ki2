@@ -33,7 +33,14 @@ const Menu = () => {
 					</span>
 					<Link to="/">{navbar.title}</Link>
 				</NavbarItem>
-				<NavbarBurger isActive={isActive} onClick={onClickNav} />
+				<NavbarBurger 
+					isActive={isActive}
+					onClick={onClickNav}
+					onKeyDown={onClickNav}
+					role="navigation"
+					aria-label="Відкрити меню"
+					tabIndex={0}
+				/>
 			</NavbarBrand>
 			<NavbarMenu hasTextAlign="left" isActive={isActive}>
 				<NavbarEnd>{navLinkList}</NavbarEnd>
