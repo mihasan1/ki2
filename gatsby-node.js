@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require('fs');
 
 const getPagePaths = array => {
 	return array.map(item => {
@@ -28,7 +29,7 @@ const getPagePaths = array => {
 	});
 };
 
-const getFlatPagePaths = getPagePaths(data).flat().map(pathObj => pathObj.path);
+const getFlatPagePaths = data => getPagePaths(data).flat().map(pathObj => pathObj.path);
 
 exports.createPages = async ({ 
 	actions,
@@ -78,5 +79,30 @@ exports.createPages = async ({
 			component: newsTemplate,
 			context: {},
 		})
+	});
+	
+	const menu = JSON.parse(
+		fs.readFileSync(
+			path.resolve("./src/data/navbar.json")
+			)
+	).menu;
+	const paths = getFlatPagePaths(menu);
+	
+	paths.forEach(_path => {
+		if(fs.existsSync(
+				path.resolve(`./src/pages${_path}.js`))
+		) {
+			console.info(`Pages "${_path}" exist`);
+			return;
+		}
+		
+		if(fs.existsSync(
+				path.resolve(`./src/data${_path}.md`))
+		) {
+			console.info(`Pages "${_path}" was creating.`);
+			return;
+		}
+		
+		console.error(`${_path} => 404`);
 	});
 }

@@ -39,7 +39,7 @@
 			]
 		},
 		{
-			"path": "student",
+			"path": "students",
 			"description": "Студенту",
 			"icon_name":"fa fa-graduation-cap fa-2x",
 			"child": [
