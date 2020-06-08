@@ -62,4 +62,33 @@ const generateNavigator = array => {
 };
 
 
+export const getPagePaths = array => {
+	return array.map(item => {
+		const newItem = { ...item };
+
+		const { child } = newItem;
+		const parentPath = newItem.path;
+
+		if (Array.isArray(child)) {
+			newItem.child = child.map(({ path }) => {
+				const newPath = parentPath.concat(
+					`/${path}`
+				);
+
+				return { 
+					path: newPath
+				};
+			});
+
+			return {
+				child: proccess(newItem.child),
+			};
+		} else {
+			return {
+				path: `/${parentPath}`
+			};
+		}
+	});
+};
+
 export const createMenu = config => generateNavigator(proccess(config))

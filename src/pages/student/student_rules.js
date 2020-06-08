@@ -5,6 +5,8 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "./../../layouts/Layout";
 
+import RawMarkdownPage from "./../../components";
+
 const StudentRules = ({ location }) => {
 	const { html } = useStaticQuery(graphql`
 		query {
@@ -16,13 +18,7 @@ const StudentRules = ({ location }) => {
 
 	return (
 		<Layout location={location} >
-			<Container>
-				<Box>
-					<Content>
-						<div dangerouslySetInnerHTML={{ __html: html }} />
-					</Content>
-				</Box>
-			</Container>
+			<RawMarkdownPage html={html}/> 
 		</Layout>
 	);
 }

@@ -4,6 +4,7 @@ import { Container, Title, Content, Box } from "bloomer";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "./../../layouts/Layout";
+import RawMarkdownPage from "./../../components";
 
 const Schedule = ({ location }) => {
 	const { html } = useStaticQuery(graphql`
@@ -16,13 +17,7 @@ const Schedule = ({ location }) => {
 
 	return (
 		<Layout location={location} >
-			<Container>
-				<Box>
-					<Content>
-						<div dangerouslySetInnerHTML={{ __html: html }} />
-					</Content>
-				</Box>
-			</Container>
+			<RawMarkdownPage html={html}/>
 		</Layout>
 	);
 }

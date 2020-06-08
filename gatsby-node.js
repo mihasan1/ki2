@@ -1,4 +1,34 @@
-const path =  require("path");
+const path = require("path");
+
+const getPagePaths = array => {
+	return array.map(item => {
+		const newItem = { ...item };
+
+		const { child } = newItem;
+		const parentPath = newItem.path;
+
+		if (Array.isArray(child)) {
+			newItem.child = child.map(({ path, ...other }) => {
+				const newPath = parentPath.concat(
+					`/${path}`
+				);
+
+				return { 
+					path: newPath, 
+					...other 
+				};
+			});
+      
+      return getPagePaths(newItem.child)
+    } else {
+			return {  
+        path: `/${parentPath}`
+			};
+		}
+	});
+};
+
+const getFlatPagePaths = getPagePaths(data).flat().map(pathObj => pathObj.path);
 
 exports.createPages = async ({ 
 	actions,
