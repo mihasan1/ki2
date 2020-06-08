@@ -1,18 +1,30 @@
 import React from "react";
-import { Container, Title, Content, Box } from "bloomer";
+import { graphql } from "gatsby";
 
-import { useStaticQuery, graphql } from "gatsby";
+import RawMarkdown from "./RawMarkdown";
 
-const RawMarkdownPage = ({ markdown }) => {
+import Layout from "./../layouts/Layout";
+
+const RawMarkdownPage = ({ data }) => {
+	const { markdownRemark } = data;
+	const { html } = markdownRemark;
+
 	return (
-			<Container>
-				<Box>
-					<Content>
-						<div dangerouslySetInnerHTML={{ __html: markdown }} />
-					</Content>
-				</Box>
-			</Container>
-	);
+		<Layout>
+			<RawMarkdown html={html} />
+		</Layout>
+	)
 }
+
+export const pageQuery = graphql`
+	query($path: String!) {
+		markdownRemark(frontmatter: {
+			path: { eq: $path } 
+		}) {
+			html
+		}
+	}
+	
+`;
 
 export default RawMarkdownPage;

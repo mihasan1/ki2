@@ -81,6 +81,7 @@ exports.createPages = async ({
 		})
 	});
 	
+	const RawMarkdownPage = path.resolve("./src/components/RawMarkdownPage.jsx")
 	const menu = JSON.parse(
 		fs.readFileSync(
 			path.resolve("./src/data/navbar.json")
@@ -99,6 +100,11 @@ exports.createPages = async ({
 		if(fs.existsSync(
 				path.resolve(`./src/data${_path}.md`))
 		) {
+			createPage({
+				path: _path,
+				component: RawMarkdownPage,
+				context: {},
+			});
 			console.info(`Pages "${_path}" was creating.`);
 			return;
 		}
