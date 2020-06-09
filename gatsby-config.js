@@ -19,10 +19,19 @@ module.exports = {
 				path: `${__dirname}/src/data/students`,
 			},
 		},
+		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
-				plugins: [`@pauliescanlon/gatsby-remark-sticky-table`]
+				plugins: [
+					`@pauliescanlon/gatsby-remark-sticky-table`,
+					{
+         		resolve: `gatsby-remark-images`,
+         		options: {
+           		maxWidth: 590,
+         		}
+					}
+				]
 			},
 		},
 	],
