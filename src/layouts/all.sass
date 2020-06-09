@@ -25,14 +25,16 @@
 		margin-left: 1vw
 		margin-right: 1vw
 
+.main-content:not(#sky)
+	align-items: flex-start !important
 
 
 @media screen and (max-width: 450px)
 	.brand
 		a
 			font-size: 5vmin
-
-	#airplane
+			
+		#airplane
   		display: none
 
 .navbar
@@ -46,7 +48,7 @@
     	color: #363636
 
 	a
-		display: block;
+		display: block
 
 .navbar-dropdown
 	.navbar-item.has-dropdown

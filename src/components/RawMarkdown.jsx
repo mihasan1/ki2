@@ -1,18 +1,16 @@
 import React from "react";
 import { Container, Title, Content, Box } from "bloomer";
 
-import { useStaticQuery, graphql } from "gatsby";
-
-const RawMarkdownPage = ({ markdown }) => {
+const RawMarkdown = ({ html }) => {
 	return (
 			<Container>
 				<Box>
 					<Content>
-						<div dangerouslySetInnerHTML={{ __html: markdown }} />
+						<div dangerouslySetInnerHTML={{ __html: html }} />
 					</Content>
 				</Box>
 			</Container>
 	);
 }
 
-export default RawMarkdownPage;
+export default RawMarkdown;

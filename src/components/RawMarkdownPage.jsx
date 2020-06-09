@@ -1,30 +1,29 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import RawMarkdown from "./RawMarkdown";
+import { RawMarkdown } from "./index";
 
 import Layout from "./../layouts/Layout";
 
-const RawMarkdownPage = ({ data }) => {
+const RawMarkdownPage = ({ location, data }) => {
 	const { markdownRemark } = data;
 	const { html } = markdownRemark;
 
 	return (
-		<Layout>
+		<Layout location={location}>
 			<RawMarkdown html={html} />
 		</Layout>
 	)
 }
 
 export const pageQuery = graphql`
-	query($path: String!) {
-		markdownRemark(frontmatter: {
-			path: { eq: $path } 
-		}) {
+	query($page: String!) {
+		markdownRemark(fileAbsolutePath: 
+			{ regex: $page }
+		) {
 			html
 		}
 	}
-	
 `;
 
 export default RawMarkdownPage;

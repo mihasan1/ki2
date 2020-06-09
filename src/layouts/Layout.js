@@ -17,7 +17,10 @@ const Layout = ({ children, location }) => (
 				<AppHeader />
 			</HeroHeader>
 
-			<HeroBody id={location.pathname === "/" ? "sky" : ""}>{children}</HeroBody>
+			<HeroBody
+				id={location.pathname === "/" ? "sky" : ""}
+				className="main-content"	
+			>{children}</HeroBody>
 		</Hero>
 		<AppFooter />
 	</div>

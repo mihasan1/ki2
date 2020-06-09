@@ -100,15 +100,18 @@ exports.createPages = async ({
 		if(fs.existsSync(
 				path.resolve(`./src/data${_path}.md`))
 		) {
+			const page = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
-				context: {},
+				context: {
+					page,
+				},
 			});
 			console.info(`Pages "${_path}" was creating.`);
 			return;
 		}
 		
-		console.error(`${_path} => 404`);
+		console.info(`${_path} => 404`);
 	});
 }

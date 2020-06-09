@@ -1,4 +1,5 @@
 import LinkDropdownGroup from "./LinkDropdownGroup";
+import RawMarkdown from "./RawMarkdown";
 import RawMarkdownPage from "./RawMarkdownPage";
 import NewsPreview from "./NewsPreview";
 
@@ -10,6 +11,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export {
+	RawMarkdown,
 	RawMarkdownPage,
 	LinkDropdownGroup,
 	NewsPreview,
