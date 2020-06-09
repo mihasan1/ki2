@@ -25,12 +25,13 @@ module.exports = {
 			options: {
 				plugins: [
 					`@pauliescanlon/gatsby-remark-sticky-table`,
+					`gatsby-remark-copy-linked-files`, 
 					{
          		resolve: `gatsby-remark-images`,
          		options: {
            		maxWidth: 590,
          		}
-					}
+					},
 				]
 			},
 		},
