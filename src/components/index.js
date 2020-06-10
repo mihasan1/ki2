@@ -10,6 +10,12 @@ import NavbarLink from "./NavbarLink";
 import Header from "./Header";
 import Footer from "./Footer";
 
+import {
+	process,
+	generateNavigator,
+	findTitleByPath
+} from "./Header/utils";
+
 export {
 	RawMarkdown,
 	RawMarkdownPage,
@@ -21,5 +27,9 @@ export {
 	
 	NavbarLink,
 	Header,
-	Footer
+	Footer,
+	
+	process,
+	generateNavigator,
+	findTitleByPath
 }

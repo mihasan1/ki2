@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
 
 import "font-awesome/css/font-awesome.css";
 import "./all.sass";
@@ -9,9 +8,11 @@ import { Hero, HeroHeader, HeroBody } from "bloomer";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 
+import Head from "./Head";
+
 const Layout = ({ children, location }) => (
 	<div>
-		<Helmet title="Київський авіаційний технікум" />
+		<Head path={location.pathname} />
 		<Hero isFullHeight isColor="light">
 			<HeroHeader>
 				<AppHeader />
