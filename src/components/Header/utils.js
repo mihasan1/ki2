@@ -36,12 +36,12 @@ export const process = array => {
 };
 
 export const generateNavigator = array => {
-	return array.map(({ path, description, icon_name, child }) => {
+	return array.map(({ path, title, icon_name, child }) => {
 		if (Array.isArray(child)) {
 			return (
 				<LinkDropdownGroup
 					path={path}
-					description={description}
+					title={title}
 					icon_name={icon_name}
 					key={path}
 				>
@@ -52,7 +52,7 @@ export const generateNavigator = array => {
 			return (
 				<NavbarLink
 					path={path}
-					description={description}
+					title={title}
 					icon_name={icon_name}
 					key={path}
 				/>

@@ -3,36 +3,36 @@
 	"menu": [
 		{
 			"path":  "main", 
-			"description": "Головна",
+			"title": "Головна",
 			"icon_name": "fa fa-home fa-2x",
 			"child": null
 		},
 		{
 			"path":  "history", 
-			"description": "Історія",
+			"title": "Історія",
 			"icon_name": "fa fa-book fa-2x",
 			"child": null
 		},
 		{
 			"path":  "abiturient",
-			"description": "Абітурієнту",
+			"title": "Абітурієнту",
 			"icon_name": "fa fa-users fa-2x",
-			"child" :[
+			"child": [
 				{
 					"path": "memo",
-					"description": "Пам'ятка абітурієнту",
+					"title ": "Пам'ятка абітурієнту",
 					"icon_name": null,
 					"child": null
 				},
 				{
 					"path": "invite_rules",
-					"description": "Правила прийому",
+					"title": "Правила прийому",
 					"icon_name": null,
 					"child": null
 				},
 				{
 					"path": "exams",
-					"description": "Вступні іспити",
+					"title": "Вступні іспити",
 					"icon_name": null,
 					"child": null
 				}
@@ -40,30 +40,30 @@
 		},
 		{
 			"path": "students",
-			"description": "Студенту",
+			"title": "Студенту",
 			"icon_name":"fa fa-graduation-cap fa-2x",
 			"child": [
 				{
 					"path": "student_rules",
-					"description": "Права та обов'язки студентів",
+					"title": "Права та обов'язки студентів",
 					"icon_name": null,
 					"child": null
 				},
 				{
 					"path": "schedule",
-					"description": "Розклад занять",
+					"title": "Розклад занять",
 					"icon_name": null,
 					"child": null
 				},	
 				{
 					"path": "success_monitor",
-					"description": "Екран успішності",
+					"title": "Екран успішності",
 					"icon_name": null,
 					"child": null
 				},
 				{
 					"path": "starostat",
-					"description": "Старостат",
+					"title": "Старостат",
 					"icon_name": null,
 					"child": null
 				}
@@ -71,36 +71,36 @@
 		},
 		{
 			"path": "for_parents",
-			"description": "Батькам",
+			"title": "Батькам",
 			"icon_name":"fa fa-user-circle fa-2x",
 			"child": [
 			{
 					"path": "priymalna_komisiya",
-					"description": "Положення про приймальну комісію",
+					"title": "Положення про приймальну комісію",
 					"icon_name": null,
 					"child": null
 			},
 			{
 					"path": "to_parents",
-					"description": "Інформація батькам",
+					"title": "Інформація батькам",
 					"icon_name": null,
 					"child": null
 			},
 			{
 					"path": "nabir",
-					"description": "Оголошення про набір",
+					"title": "Оголошення про набір",
 					"icon_name": null,
 					"child": null
 			},
 			{
 					"path": "election",
-					"description": "Вибори директора",
+					"title": "Вибори директора",
 					"icon_name": null,
 					"child": null
 			},
 			{
 					"path": "sertificate",
-					"description": "Сертифікат",
+					"title": "Сертифікат",
 					"icon_name": null,
 					"child": null
 			}
@@ -108,7 +108,7 @@
 		},
 		{
 			"path":  "contacts",
-			"description": "Контакти",
+			"title": "Контакти",
 			"icon_name": "fa fa-address-card fa-2x",
 			"child": null
 		}
