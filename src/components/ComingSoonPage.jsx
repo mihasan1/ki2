@@ -10,7 +10,7 @@ import {
 
 import Layout from "./../layouts/Layout";
 
-const NotFoundPage = ({ location }) => (
+const ComingSoonPage = ({ location }) => (
 	<Layout location={location}>
 		<Message isColor="warning">
 		  <MessageHeader>
@@ -18,9 +18,9 @@ const NotFoundPage = ({ location }) => (
 		  </MessageHeader>
 		  <MessageBody>
 		      <Content>
-						<h3>Сторінку не знайдено!</h3>
+						<h3>Ця сторінка на даний момент незаповнена</h3>
 						<br />
-						<h4>Цієї сторінки не існує...</h4>
+						<h4>Але це не на довго, адже ми вже працюємо над цим <Icon hasTextColor="danger" className="fa fa-heart" /></h4>
 						<br />
 						<a href="/main">Повернутися на головну</a>
 					</Content>
@@ -29,4 +29,4 @@ const NotFoundPage = ({ location }) => (
 	</Layout>
 );
 
-export default NotFoundPage;
+export default ComingSoonPage;

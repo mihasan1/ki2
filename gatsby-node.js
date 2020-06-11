@@ -82,6 +82,8 @@ exports.createPages = async ({
 	});
 	
 	const RawMarkdownPage = path.resolve("./src/components/RawMarkdownPage.jsx")
+	const ComingSoonPage = path.resolve("./src/components/ComingSoonPage.jsx")
+	
 	const menu = JSON.parse(
 		fs.readFileSync(
 			path.resolve("./src/data/navbar.json")
@@ -100,18 +102,24 @@ exports.createPages = async ({
 		if(fs.existsSync(
 				path.resolve(`./src/data${_path}.md`))
 		) {
-			const page = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
+			const pageContext = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
 				context: {
-					page,
+					page: pageContext,
 				},
 			});
 			console.info(`Pages "${_path}" was creating.`);
 			return;
 		}
 		
-		console.info(`${_path} => 404`);
+		createPage({
+			path: _path,
+			component: ComingSoonPage,
+			context: {}
+		});
+
+		console.info(`${_path} => ComingSoonPage`);
 	});
 }
