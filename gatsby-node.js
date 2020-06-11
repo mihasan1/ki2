@@ -95,7 +95,7 @@ exports.createPages = async ({
 		if(fs.existsSync(
 				path.resolve(`./src/pages${_path}.js`))
 		) {
-			console.info(`Pages "${_path}" exist`);
+			console.warn(`Pages "${_path}" exist`);
 			return;
 		}
 		
@@ -103,6 +103,7 @@ exports.createPages = async ({
 				path.resolve(`./src/data${_path}.md`))
 		) {
 			const pageContext = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
+			
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,

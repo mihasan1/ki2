@@ -7,7 +7,7 @@ import Layout from "./../layouts/Layout";
 
 const RawMarkdownPage = ({ location, data }) => {
 	const { markdownRemark } = data;
-	const { html } = markdownRemark;
+	const html = markdownRemark?.html ?? "Щось погане трапилось!";
 
 	return (
 		<Layout location={location}>

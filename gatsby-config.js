@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Gatsby Default Starter',
+		title: 'Київський авіаційний технікум',
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -15,8 +15,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `student_files`,
-				path: `${__dirname}/src/data/students`,
+				name: `page_files`,
+				path: `${__dirname}/src/data`,
 			},
 		},
 		`gatsby-plugin-sharp`,

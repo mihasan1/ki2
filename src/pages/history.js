@@ -14,7 +14,7 @@ const History = ({ location }) => (
 					фахівців для авіаційної промисловості.
 				</Notification>
 
-				<Notification isColor="primary">
+				<Notification isColor="info">
 					Технікум заснований на <i>державній формі</i> власності.
 				</Notification>
 
@@ -23,7 +23,7 @@ const History = ({ location }) => (
 					«Літакобудування».
 				</Notification>
 
-				<Notification isColor="primary">
+				<Notification isColor="info">
 					Відповідно до «Основних напрямків перебудови вищої і середньої
 					спеціальної освіти в країні» на підставі наказу № 810 від 27.11.1987 р.
 					про новий перелік спеціальностей з 1989 р. навчання ведеться за фахом
