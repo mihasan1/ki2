@@ -20,7 +20,7 @@
 			"child": [
 				{
 					"path": "memo",
-					"title ": "Пам'ятка абітурієнту",
+					"title": "Пам'ятка абітурієнту",
 					"icon_name": null,
 					"child": null
 				},
