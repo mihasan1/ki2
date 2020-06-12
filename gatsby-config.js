@@ -35,5 +35,20 @@ module.exports = {
 				]
 			},
 		},
+		{
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Київський авіаційний технікум`,
+        short_name: `КіАТ`,
+				description: `Київський авіаційний технікум - вищий навчальний заклад I рівня акредитації.`,
+				lang: `uk_UA`,
+				icon: `src/media/logo1.png`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
+		`gatsby-plugin-offline`,
 	],
 };
