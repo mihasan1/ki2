@@ -86,11 +86,13 @@ exports.createPages = async ({
 	
 	const menu = JSON.parse(
 		fs.readFileSync(
-			path.resolve("./src/data/navbar.json")
+			path.resolve("./src/page_data/navbar.json")
 			)
 	).menu;
 	const paths = getFlatPagePaths(menu);
-	
+    
+    console.log("\n\n");
+
 	paths.forEach(_path => {
 		if(fs.existsSync(
 				path.resolve(`./src/pages${_path}.js`))
@@ -100,7 +102,7 @@ exports.createPages = async ({
 		}
 		
 		if(fs.existsSync(
-				path.resolve(`./src/data${_path}.md`))
+				path.resolve(`./src/page_data${_path}.md`))
 		) {
 			const pageContext = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
 			
@@ -122,5 +124,7 @@ exports.createPages = async ({
 		});
 
 		console.info(`${_path} => ComingSoonPage`);
-	});
+    });
+    
+    console.log("\n\n");
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Helmet } from "react-helmet";
 
-import { menu } from "./../data/navbar.json";
+import { menu } from "./../page_data/navbar.json";
 
 import { findTitleByPath, process } from "./../components"; 
 

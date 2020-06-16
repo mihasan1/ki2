@@ -9,14 +9,14 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `news`,
-				path: `${__dirname}/src/data/news`,
+				path: `${__dirname}/src/page_data/news`,
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `page_files`,
-				path: `${__dirname}/src/data`,
+				path: `${__dirname}/src/page_data`,
 			},
 		},
 		`gatsby-plugin-sharp`,

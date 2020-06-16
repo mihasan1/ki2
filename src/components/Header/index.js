@@ -13,7 +13,7 @@ import {
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-import navbar from "./../../data/navbar.json";
+import navbar from "./../../page_data/navbar.json";
 
 import { createMenu } from "./utils"
 
