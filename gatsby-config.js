@@ -1,6 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Київський авіаційний технікум',
+        title: 'Київський авіаційний технікум',
+        siteUrl: `https://kiat.now.sh/`,
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -49,6 +50,7 @@ module.exports = {
         display: `standalone`,
       },
     },
-		`gatsby-plugin-offline`,
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-no-javascript`,
 	],
 };
