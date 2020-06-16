@@ -15,7 +15,10 @@ const Item = ({ title, icon_name }) => (
 const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
 	const [showStatus, updateShowStatus] = useState(false);
 
-	const toggleDropdown = () => updateShowStatus(!showStatus);
+	const toggleDropdown = () => {
+        console.log("Click")
+        updateShowStatus(!showStatus);
+    }
 
 	return (
 		<NavbarItem
