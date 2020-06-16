@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import { RawMarkdown } from "./index";
 
-import Layout from "./../layouts/Layout";
+import Layout from "./../../layouts/Layout";
 
 const RawMarkdownPage = ({ location, data }) => {
 	const { markdownRemark } = data;

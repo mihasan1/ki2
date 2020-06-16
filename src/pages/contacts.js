@@ -29,14 +29,6 @@ const Contacts = ({ location }) => (
 					<a href="tel:+360937103158">(093) 710-31-58</a> - приймальна комісія
 				</p>
 
-				{/*
-					<p>
-						Адміністрація сайту:
-						<br />
-						<a href="mailto:adm_kiat@mail.ru">adm_kiat@mail.ru</a>
-					</p>
-				*/}
-
 				<p>
 					Графік роботи:
 					<br />

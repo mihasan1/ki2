@@ -1,7 +1,7 @@
 @import "~bulma"
-@import "styles/arrow.sass"
-@import "styles/sky.sass"
-@import "styles/keyframes.sass"
+
+*:focus,
+    outline: 2px solid $info
 
 .brand
 	font-weight: 600
@@ -29,8 +29,7 @@
 	align-items: flex-start !important
 
 .main-content
-  justify-content: center;
-
+  justify-content: center
 
 @media screen and (max-width: 450px)
 	.brand
@@ -39,24 +38,6 @@
 			
 		#airplane
   		display: none
-
-.navbar
-	border-bottom: 1px solid #4a4a4a
-	flex-wrap: wrap
-
-.navbar-item
-	color: rgb(54, 54, 54) !important
-
-	&:hover
-		background-color: #e8e8e8
-    	color: #363636
-
-	a
-		display: block
-
-.navbar-dropdown
-	.navbar-item.has-dropdown
-		padding-left: 0
 
 .arrow
 	user-select: none
@@ -67,14 +48,3 @@
 		display: flex
 		flex-flow: row
 		align-items: center
-
-
-.NewsPreview
-	.card
-		margin-block-start: 2vmax
-		margin-block-end: 2vmax
-	.card-footer
-		border: 0
-
-	.card-footer-item
-		border: 0

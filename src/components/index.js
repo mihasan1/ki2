@@ -1,10 +1,8 @@
 import LinkDropdownGroup from "./LinkDropdownGroup";
-import RawMarkdown from "./RawMarkdown";
-import RawMarkdownPage from "./RawMarkdownPage";
+import { RawMarkdown, RawMarkdownPage } from "./RawMD";
 import NewsPreview from "./NewsPreview";
 
-import Cloud from "./Cloud";
-import Airplane from "./Airplane";
+import { Cloud, Airplane } from "./SkyObjects";
 
 import NavbarLink from "./NavbarLink";
 import Header from "./Header";
@@ -13,7 +11,7 @@ import Footer from "./Footer";
 import {
 	process,
 	generateNavigator,
-	findTitleByPath
+	findMetaByPath
 } from "./Header/utils";
 
 export {
@@ -31,5 +29,5 @@ export {
 	
 	process,
 	generateNavigator,
-	findTitleByPath
+	findMetaByPath
 }

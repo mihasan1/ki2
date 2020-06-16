@@ -1,6 +1,5 @@
 import React from "react";
-import Cloud from "./../components/Cloud";
-import Airplane from "./../components/Airplane";
+import { Cloud, Airplane } from "./../components/SkyObjects";
 
 import Layout from "./../layouts/Layout";
 

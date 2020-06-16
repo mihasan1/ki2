@@ -10,12 +10,14 @@ import {
 	NavbarItem,
 } from "bloomer";
 
+import "./index.sass";
+
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
 import navbar from "./../../page_data/navbar.json";
 
-import { createMenu } from "./utils"
+import { createMenu } from "./utils";
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);

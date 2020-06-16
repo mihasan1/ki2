@@ -78,11 +78,11 @@ exports.createPages = async ({
 			path,
 			component: newsTemplate,
 			context: {},
-		})
+		});
 	});
 	
-	const RawMarkdownPage = path.resolve("./src/components/RawMarkdownPage.jsx")
-	const ComingSoonPage = path.resolve("./src/components/ComingSoonPage.jsx")
+    const RawMarkdownPage = path.resolve("./src/components/RawMD/RawMarkdownPage.jsx");
+    const ComingSoonPage = path.resolve("./src/components/ComingSoonPage.jsx")
 	
 	const menu = JSON.parse(
 		fs.readFileSync(

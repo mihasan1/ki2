@@ -15,6 +15,8 @@ import {
 	Button,
 } from "bloomer";
 
+import "./index.sass";
+
 const toPreviewText = (str, begin = 0, end = 150, suspensionPoints = "...") => str.slice(begin, end).concat(suspensionPoints)
 
 const NewsPreview = ({ title, date, path, html, image }) => {

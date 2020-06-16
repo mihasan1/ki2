@@ -17,7 +17,7 @@ const NavbarLink = ({ path, title, icon_name, ...others }) => (
 
 NavbarLink.propTypes = {
 	path: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
 	icon_name: PropTypes.oneOfType([() => null, PropTypes.string]),
 };
 

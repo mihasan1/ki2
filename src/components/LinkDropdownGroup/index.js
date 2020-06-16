@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { NavbarDropdown, NavbarItem, Icon } from "bloomer";
 
-import NavbarLink from "./NavbarLink";
+import NavbarLink from "./../index";
+
+import "./arrow.sass";
 
 const Item = ({ title, icon_name }) => (
 	<NavbarItem>
@@ -9,14 +11,6 @@ const Item = ({ title, icon_name }) => (
 		{title}
 	</NavbarItem>
 );
-
-const OpenDropdownButton = ({ toggle, status }) => (
-	<Icon 
-		className="fa fa-arrow-down"
-		isSize="medium"
-		onClick={() => toggle(!status)}
-	/>
-)
 
 const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
 	const [showStatus, updateShowStatus] = useState(false);
@@ -34,7 +28,10 @@ const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
 			<div className="arrow" onClick={toggleDropdown}>
 
 				<Item title={title} icon_name={icon_name} />
-				<OpenDropdownButton toggle={() =>{}} status={showStatus} />
+				<Icon
+	            	className="fa fa-arrow-down mark"
+	            	isSize="medium"
+	            />
 			
 			</div>
 			<NavbarDropdown isHidden={!showStatus}>

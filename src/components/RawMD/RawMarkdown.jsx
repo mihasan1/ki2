@@ -6,7 +6,10 @@ const RawMarkdown = ({ html }) => {
 			<Container>
 				<Box>
 					<Content>
-						<div dangerouslySetInnerHTML={{ __html: html }} />
+                        <div 
+                            dangerouslySetInnerHTML={{ __html: html }}
+                            className="raw-markdown-remark"
+                        />
 					</Content>
 				</Box>
 			</Container>

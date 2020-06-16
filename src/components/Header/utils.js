@@ -73,7 +73,7 @@ export const menuConfigToFlat = array => {
 
 export const createMenu = config => generateNavigator(process(config));
 
-export const findTitleByPath = array => searchPath => {
+export const findMetaByPath = array => searchPath => {
 	return menuConfigToFlat(array)
 		.find(({ path }) => path === searchPath);
 }

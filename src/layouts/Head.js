@@ -4,18 +4,19 @@ import { Helmet } from "react-helmet";
 
 import { menu } from "./../page_data/navbar.json";
 
-import { findTitleByPath, process } from "./../components"; 
+import { findMetaByPath, process } from "./../components"; 
 
 const Head = ({ path }) => {
-	const subtitle = findTitleByPath(
+	const obj = findMetaByPath(
 		process(menu)
-	)(path)?.title;
-	
-	const title = subtitle ? `| ${subtitle}` : "";
+    )(path);
+
+    const title = obj?.title ?? "";
+    const description = obj?.description ?? `Київський авіаційний технікум | ${title}`;
 	
 	return (
 		<Helmet>
-			<title>Київський авіаційний технікум {title} </title>
+			<title>Київський авіаційний технікум | {title} </title>
 			<meta charset="utf-8" />
 			<meta
 				http-equiv="Content-Type"
@@ -23,7 +24,7 @@ const Head = ({ path }) => {
 			/>
 			<meta 
 				name="description"
-				content={`Київський авіаційний технікум ${title}`}
+				content={description}
 			/>
 			<meta
 				name="keywords"
@@ -49,7 +50,6 @@ const Head = ({ path }) => {
 				name="google"
 				content="notranslate"
 			/>
-			
 		</Helmet>
 	)
 }

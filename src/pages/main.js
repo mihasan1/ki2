@@ -9,7 +9,7 @@ import {
 } from "bloomer";
 
 import Layout from "./../layouts/Layout";
-import NewsPreview from "./../components/NewsPreview";
+import { NewsPreview } from "./../components";
 
 const MainPage = ({ location }) => {
 	const { edges } = useStaticQuery(graphql`
@@ -41,8 +41,8 @@ const MainPage = ({ location }) => {
 	const news = edges.map(({ node }, index) => {
 		let { html, frontmatter } = node;
 		return (
-			<Column isSize="1/2">
-				<NewsPreview html={html} {...frontmatter} key={index} />
+			<Column isSize="1/2" key={index}>
+				<NewsPreview html={html} {...frontmatter} />
 			</Column>
 		);
 	});
