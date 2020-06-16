@@ -3,7 +3,4 @@ import RawMarkdownPage from "./RawMarkdownPage";
 
 import "./index.sass";
 
-export {
-    RawMarkdown,
-    RawMarkdownPage
-}
+export { RawMarkdown, RawMarkdownPage };

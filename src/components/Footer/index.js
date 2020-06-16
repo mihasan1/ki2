@@ -8,7 +8,8 @@ const AppFooter = () => (
 				<Columns>
 					<Column isFull>
 						<p>
-							Made with<Icon hasTextColor="danger" className="fa fa-heart" />
+							Made with
+							<Icon hasTextColor="danger" className="fa fa-heart" />
 							by <a href="https://github.com/faramozzayw">faramozzayw</a>
 						</p>
 					</Column>

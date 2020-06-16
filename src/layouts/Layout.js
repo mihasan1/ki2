@@ -20,8 +20,10 @@ const Layout = ({ children, location }) => (
 
 			<HeroBody
 				id={location.pathname === "/" ? "sky" : ""}
-				className="main-content"	
-			>{children}</HeroBody>
+				className="main-content"
+			>
+				{children}
+			</HeroBody>
 		</Hero>
 		<AppFooter />
 	</div>

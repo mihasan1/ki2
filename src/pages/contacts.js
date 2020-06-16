@@ -8,7 +8,7 @@ import Layout from "./../layouts/Layout";
 const space = " ";
 
 const Contacts = ({ location }) => (
-	<Layout location={location} >
+	<Layout location={location}>
 		<Container hasTextAlign="centered">
 			<Content>
 				<Title>Київський авіаційний технікум</Title>

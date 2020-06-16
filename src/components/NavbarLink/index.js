@@ -4,11 +4,8 @@ import PropTypes from "prop-types";
 import { NavbarItem, Icon } from "bloomer";
 
 const NavbarLink = ({ path, title, icon_name, ...others }) => (
-	<NavbarItem className={icon_name === "" ? "without-icon" : ""} { ...others }>
-		<Link 
-			to={path}
-			activeClassName="has-text-success"
-		>
+	<NavbarItem className={icon_name === "" ? "without-icon" : ""} {...others}>
+		<Link to={path} activeClassName="has-text-success">
 			{icon_name !== null && <Icon isSize="large" className={icon_name} />}
 			{title}
 		</Link>

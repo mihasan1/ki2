@@ -8,26 +8,19 @@ import NavbarLink from "./NavbarLink";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import {
-	process,
-	generateNavigator,
-	findMetaByPath
-} from "./Header/utils";
+import { process, generateNavigator, findMetaByPath } from "./Header/utils";
 
 export {
 	RawMarkdown,
 	RawMarkdownPage,
 	LinkDropdownGroup,
 	NewsPreview,
-	
 	Cloud,
 	Airplane,
-	
 	NavbarLink,
 	Header,
 	Footer,
-	
 	process,
 	generateNavigator,
-	findMetaByPath
-}
+	findMetaByPath,
+};

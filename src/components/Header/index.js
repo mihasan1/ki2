@@ -35,7 +35,7 @@ const Menu = () => {
 					</span>
 					<Link to="/">{navbar.title}</Link>
 				</NavbarItem>
-				<NavbarBurger 
+				<NavbarBurger
 					isActive={isActive}
 					onClick={onClickNav}
 					onKeyDown={onClickNav}

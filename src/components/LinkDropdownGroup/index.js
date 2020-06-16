@@ -15,7 +15,7 @@ const Item = ({ title, icon_name }) => (
 const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
 	const [showStatus, updateShowStatus] = useState(false);
 
-	const toggleDropdown = () => updateShowStatus(!showStatus)
+	const toggleDropdown = () => updateShowStatus(!showStatus);
 
 	return (
 		<NavbarItem
@@ -26,19 +26,12 @@ const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
 			onKeyDown={toggleDropdown}
 		>
 			<div className="arrow" onClick={toggleDropdown}>
-
 				<Item title={title} icon_name={icon_name} />
-				<Icon
-	            	className="fa fa-arrow-down mark"
-	            	isSize="medium"
-	            />
-			
+				<Icon className="fa fa-arrow-down mark" isSize="medium" />
 			</div>
-			<NavbarDropdown isHidden={!showStatus}>
-				{ children }
-			</NavbarDropdown>
+			<NavbarDropdown isHidden={!showStatus}>{children}</NavbarDropdown>
 		</NavbarItem>
-	)
-}
+	);
+};
 
 export default LinkDropdownGroup;

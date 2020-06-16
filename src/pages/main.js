@@ -1,12 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import {
-	Container,
-	Box,
-	Columns,
-	Column,
-} from "bloomer";
+import { Container, Box, Columns, Column } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 import { NewsPreview } from "./../components";
@@ -14,16 +9,13 @@ import { NewsPreview } from "./../components";
 const MainPage = ({ location }) => {
 	const { edges } = useStaticQuery(graphql`
 		query {
-			allMarkdownRemark(sort: {
-				fields: frontmatter___date, 
-				order: DESC
-			}, filter: {
-				frontmatter: {
-					path: { ne: null },
-					date: { ne: null }
-				},
-				fileAbsolutePath: { regex: "/news/" }
-			}) {
+			allMarkdownRemark(
+				sort: { fields: frontmatter___date, order: DESC }
+				filter: {
+					frontmatter: { path: { ne: null }, date: { ne: null } }
+					fileAbsolutePath: { regex: "/news/" }
+				}
+			) {
 				edges {
 					node {
 						html

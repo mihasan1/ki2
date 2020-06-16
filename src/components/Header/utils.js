@@ -12,13 +12,11 @@ export const process = array => {
 
 		if (Array.isArray(child)) {
 			newItem.child = child.map(({ path, ...other }) => {
-				const newPath = parentPath.concat(
-					`/${path}`
-				);
+				const newPath = parentPath.concat(`/${path}`);
 
-				return { 
-					path: newPath, 
-					...other 
+				return {
+					path: newPath,
+					...other,
 				};
 			});
 
@@ -29,7 +27,7 @@ export const process = array => {
 		} else {
 			return {
 				...newItem,
-				path: `/${parentPath}`
+				path: `/${parentPath}`,
 			};
 		}
 	});
@@ -64,16 +62,15 @@ export const generateNavigator = array => {
 export const menuConfigToFlat = array => {
 	return array.flatMap(item => {
 		if (Array.isArray(item.child)) {
-      return menuConfigToFlat(item.child)
-    } else {
-			return { ...item	}
+			return menuConfigToFlat(item.child);
+		} else {
+			return { ...item };
 		}
 	});
-}
+};
 
 export const createMenu = config => generateNavigator(process(config));
 
 export const findMetaByPath = array => searchPath => {
-	return menuConfigToFlat(array)
-		.find(({ path }) => path === searchPath);
-}
+	return menuConfigToFlat(array).find(({ path }) => path === searchPath);
+};

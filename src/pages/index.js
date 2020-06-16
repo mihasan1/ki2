@@ -6,7 +6,7 @@ import Layout from "./../layouts/Layout";
 const Clouds = ({ children }) => <div className="clouds">{children}</div>;
 
 const IndexPage = ({ location }) => (
-	<Layout location={location} >
+	<Layout location={location}>
 		<Airplane />
 		<Clouds>
 			<Cloud isSize="medium" isSpeed="slower" />
