@@ -1,13 +1,24 @@
+@import "~bulma"
+
 $active-md-link: #0f6cab
 $visited-md-link: #4b6f88
 
-.raw-markdown-remark 
+$fallback-font: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+
+.raw-markdown-remark
+    font-family: Segoe UI, serif, $fallback-font
+
+    h1, h2, h3, h4, h5, h6
+        font-family: Segoe UI, sans-serif, $fallback-font
+        font-weight: 700 !important
+            
     a
-        text-decoration: underline !important
+        border-bottom: .1rem dashed $active-md-link
         color: $active-md-link !important
 
         &:visited
             color: $visited-md-link !important
+            border-bottom-color: $visited-md-link
 
     .left
         text-align: left
