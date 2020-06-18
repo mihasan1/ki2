@@ -28,7 +28,10 @@ const Head = ({ path }) => {
 			<meta name="Author" content="Київський авіаційний технікум" />
 			<meta name="Copyright" content="Київський авіаційний технікум" />
 			<meta name="google" content="notranslate" />
-            <meta name="google-site-verification" content="vhihO45YdckDZzt3kbUGzzm56NK61QO1ri2SbcmN-qQ" />
+			<meta
+				name="google-site-verification"
+				content="vhihO45YdckDZzt3kbUGzzm56NK61QO1ri2SbcmN-qQ"
+			/>
 		</Helmet>
 	);
 };
