@@ -40,7 +40,7 @@
 		"dev": "gatsby develop",
 		"dev_o": "gatsby develop -o",
 		"clean": "gatsby clean",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\""
 	},
 	"devDependencies": {
 		"@types/jest": "^26.0.0",
