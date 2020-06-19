@@ -15,12 +15,12 @@ import {
 } from "bloomer";
 
 import {
-	setTitle,
-	setDescription,
-	setType,
-	toggleIsLoading,
-	setResponseStatusOK,
-	reset,
+	setDescriptionCreators,
+	setTitleCreators,
+	setTypeCreators,
+	setResponseStatusOKCreators,
+	toggleIsLoadingCreators,
+	resetCreators,
 } from "./store/action";
 import { initialState } from "./store/formData";
 import { reducer } from "./store/reducer";
@@ -36,56 +36,36 @@ const FeedbackForm = () => {
 		dispatch,
 	] = useReducer(reducer, initialState);
 
-	const changeTitle = e => {
-		dispatch({ type: setTitle, payload: e.target.value });
+	const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+		dispatch(setTitleCreators(e.target.value));
 	};
 
-	const changeDescription = e => {
-		dispatch({ type: setDescription, payload: e.target.value });
+	const changeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+		dispatch(setDescriptionCreators(e.target.value));
 	};
 
-	const changeType = e => {
-		dispatch({ type: setType, payload: e.target.value });
+	const changeType = (e: React.ChangeEvent<HTMLInputElement>) => {
+		dispatch(setTypeCreators(e.target.value));
 	};
 
-	const submitHandler = e => {
+	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		dispatch({
-			type: toggleIsLoading,
-			payload: true,
-		});
+		dispatch(toggleIsLoadingCreators(true));
 
 		createIssue({
 			title,
 			description,
 			type,
 		})
-			.then(response => {
-				dispatch({
-					type: setResponseStatusOK,
-					payload: response.ok,
-				});
-			})
-			.catch(_ =>
-				dispatch({
-					type: setResponseStatusOK,
-					payload: false,
-				}),
-			)
-			.finally(_ =>
-				dispatch({
-					type: toggleIsLoading,
-					payload: false,
-				}),
-			);
+			.then(response => dispatch(setResponseStatusOKCreators(response.ok)))
+			.catch(() => dispatch(setResponseStatusOKCreators(false)))
+			.finally(() => dispatch(toggleIsLoadingCreators(false)));
 	};
 
 	const openModal = () => toggleModal(true);
 	const closeModal = () => {
 		toggleModal(false);
-		dispatch({
-			type: reset,
-		});
+		dispatch(resetCreators());
 	};
 
 	const currentLen = maxTitleLen - title.length;

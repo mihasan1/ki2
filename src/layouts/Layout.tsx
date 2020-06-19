@@ -1,16 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "font-awesome/css/font-awesome.css";
 import "./all.sass";
 
 import { Hero, HeroHeader, HeroBody } from "bloomer";
-import AppHeader from "../components/Header";
-import AppFooter from "../components/Footer";
+import { Header as AppHeader, Footer as AppFooter } from "../components";
 
 import Head from "./Head";
 
-const Layout = ({ children, location }) => (
+import { Location } from "./../types/index";
+
+interface LayoutProps {
+	children?: React.ReactNode;
+	location: Location;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, location }) => (
 	<div>
 		<Head path={location.pathname} />
 		<Hero isFullHeight isColor="light">
@@ -28,9 +33,5 @@ const Layout = ({ children, location }) => (
 		<AppFooter />
 	</div>
 );
-
-Layout.propTypes = {
-	children: PropTypes.func,
-};
 
 export default Layout;

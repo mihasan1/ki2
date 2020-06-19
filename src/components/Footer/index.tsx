@@ -3,7 +3,7 @@ import { Footer, Container, Content, Columns, Column, Icon } from "bloomer";
 
 import { FeedbackForm } from "./../index";
 
-const AppFooter = () => (
+const AppFooter: React.FC = () => (
 	<Footer id="footer">
 		<Container>
 			<Content>

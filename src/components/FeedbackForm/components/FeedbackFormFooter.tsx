@@ -1,9 +1,16 @@
 import React from "react";
 
 import { ModalCardFooter, Button, Help } from "bloomer";
+import { ResponseStatusOK } from "./../store/types";
 
-export const FeedbackFormFooter = ({
-	sendHandler = () => {},
+export interface FeedbackFormFooterProps {
+	cancelHandler: () => void;
+	errorStatus: boolean;
+	isLoading: boolean;
+	responseStatusOK: ResponseStatusOK;
+}
+
+export const FeedbackFormFooter: React.FC<FeedbackFormFooterProps> = ({
 	cancelHandler = () => {},
 	errorStatus = false,
 	isLoading = false,
@@ -15,7 +22,6 @@ export const FeedbackFormFooter = ({
 			type="submit"
 			isColor={errorStatus ? "danger" : "success"}
 			isLoading={isLoading}
-			onClick={sendHandler}
 			disabled={errorStatus || isLoading}
 		>
 			Відправити

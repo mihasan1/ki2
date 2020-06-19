@@ -3,7 +3,7 @@ import React from "react";
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-export const process = array => {
+export const process = (array: any[]): any => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -33,7 +33,7 @@ export const process = array => {
 	});
 };
 
-export const generateNavigator = array => {
+export const generateNavigator = (array: any[]): any => {
 	return array.map(({ path, title, icon_name, child }) => {
 		if (Array.isArray(child)) {
 			return (
@@ -59,7 +59,7 @@ export const generateNavigator = array => {
 	});
 };
 
-export const menuConfigToFlat = array => {
+export const menuConfigToFlat = (array: any[]): any => {
 	return array.flatMap(item => {
 		if (Array.isArray(item.child)) {
 			return menuConfigToFlat(item.child);
@@ -69,8 +69,8 @@ export const menuConfigToFlat = array => {
 	});
 };
 
-export const createMenu = config => generateNavigator(process(config));
+export const createMenu = (config: any) => generateNavigator(process(config));
 
-export const findMetaByPath = array => searchPath => {
+export const findMetaByPath = (array: any[]): any => (searchPath: string) => {
 	return menuConfigToFlat(array).find(({ path }) => path === searchPath);
 };

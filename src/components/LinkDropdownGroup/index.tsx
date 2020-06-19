@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 import { NavbarDropdown, NavbarItem, Icon } from "bloomer";
 
-import NavbarLink from "./../index";
+import { NavbarLink } from "./../index";
+
+import { PageMetadata } from "./../../types";
 
 import "./arrow.sass";
 
-const Item = ({ title, icon_name }) => (
+export interface ItemProps {
+	title?: string;
+	icon_name?: string;
+}
+
+const Item: React.FC<ItemProps> = ({ title, icon_name }) => (
 	<NavbarItem>
 		{icon_name !== null && <Icon isSize="large" className={icon_name} />}
 		{title}
 	</NavbarItem>
 );
 
-const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
+const LinkDropdownGroup: React.FC<PageMetadata> = ({
+	path,
+	title,
+	icon_name,
+	children,
+}) => {
 	const [showStatus, updateShowStatus] = useState(false);
 
-	const toggleDropdown = () => {
-        console.log("Click")
-        updateShowStatus(!showStatus);
-    }
+	const toggleDropdown = () => updateShowStatus(!showStatus);
 
 	return (
 		<NavbarItem

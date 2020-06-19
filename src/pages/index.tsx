@@ -3,9 +3,17 @@ import { Cloud, Airplane } from "./../components/SkyObjects";
 
 import Layout from "./../layouts/Layout";
 
-const Clouds = ({ children }) => <div className="clouds">{children}</div>;
+import { PageWithLocation } from "./../types";
 
-const IndexPage = ({ location }) => (
+export interface CloudProps {
+	children: React.ReactNode;
+}
+
+const Clouds: React.FC<CloudProps> = ({ children }) => (
+	<div className="clouds">{children}</div>
+);
+
+const IndexPage: React.FC<PageWithLocation> = ({ location }) => (
 	<Layout location={location}>
 		<Airplane />
 		<Clouds>

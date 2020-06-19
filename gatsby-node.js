@@ -1,5 +1,5 @@
 const path = require("path");
-const fs = require('fs');
+const fs = require("fs");
 
 const getPagePaths = array => {
 	return array.map(item => {
@@ -10,48 +10,42 @@ const getPagePaths = array => {
 
 		if (Array.isArray(child)) {
 			newItem.child = child.map(({ path, ...other }) => {
-				const newPath = parentPath.concat(
-					`/${path}`
-				);
+				const newPath = parentPath.concat(`/${path}`);
 
-				return { 
-					path: newPath, 
-					...other 
+				return {
+					path: newPath,
+					...other,
 				};
 			});
-      
-      return getPagePaths(newItem.child)
-    } else {
-			return {  
-        path: `/${parentPath}`
+
+			return getPagePaths(newItem.child);
+		} else {
+			return {
+				path: `/${parentPath}`,
 			};
 		}
 	});
 };
 
-const getFlatPagePaths = data => getPagePaths(data).flat().map(pathObj => pathObj.path);
+const getFlatPagePaths = data =>
+	getPagePaths(data)
+		.flat()
+		.map(pathObj => pathObj.path);
 
-exports.createPages = async ({ 
-	actions,
-	graphql,
-	reporter,
-}) =>  {
+exports.createPages = async ({ actions, graphql, reporter }) => {
 	const { createPage } = actions;
 
-	const newsTemplate = path.resolve("./src/template/newsTemplate.jsx");
+	const newsTemplate = path.resolve("./src/template/newsTemplate.tsx");
 
 	const result = await graphql(`
 		query {
-			allMarkdownRemark(sort: {
-				fields: frontmatter___date, 
-				order: DESC
-			}, filter: {
-				frontmatter: {
-					path: { ne: null },
-					date: { ne: null }
-				},
-				fileAbsolutePath: { regex: "/news/" }
-			}) {
+			allMarkdownRemark(
+				sort: { fields: frontmatter___date, order: DESC }
+				filter: {
+					frontmatter: { path: { ne: null }, date: { ne: null } }
+					fileAbsolutePath: { regex: "/news/" }
+				}
+			) {
 				edges {
 					node {
 						html
@@ -66,7 +60,7 @@ exports.createPages = async ({
 		}
 	`);
 
-	if(result.errors) {
+	if (result.errors) {
 		reporter.panicOnBuild(`Error while running GraphQL query.`);
 		return;
 	}
@@ -80,32 +74,29 @@ exports.createPages = async ({
 			context: {},
 		});
 	});
-	
-    const RawMarkdownPage = path.resolve("./src/components/RawMD/RawMarkdownPage.jsx");
-    const ComingSoonPage = path.resolve("./src/components/ComingSoonPage.jsx")
-	
+
+	const RawMarkdownPage = path.resolve(
+		"./src/components/RawMD/RawMarkdownPage.tsx",
+	);
+	const ComingSoonPage = path.resolve("./src/components/ComingSoonPage.tsx");
+
 	const menu = JSON.parse(
-		fs.readFileSync(
-			path.resolve("./src/page_data/navbar.json")
-			)
+		fs.readFileSync(path.resolve("./src/page_data/navbar.json")),
 	).menu;
 	const paths = getFlatPagePaths(menu);
-    
-    console.log("\n\n");
+
+	console.log("\n\n");
 
 	paths.forEach(_path => {
-		if(fs.existsSync(
-				path.resolve(`./src/pages${_path}.js`))
-		) {
+		if (fs.existsSync(path.resolve(`./src/pages${_path}.tsx`))) {
 			console.warn(`Pages "${_path}" exist`);
 			return;
 		}
-		
-		if(fs.existsSync(
-				path.resolve(`./src/page_data${_path}.md`))
-		) {
-			const pageContext = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
-			
+
+		if (fs.existsSync(path.resolve(`./src/page_data${_path}.md`))) {
+			const pageContext =
+				_path.charAt(0) + _path.slice(1).replace(/\//g, "/") + "/";
+
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
@@ -116,15 +107,15 @@ exports.createPages = async ({
 			console.info(`Pages "${_path}" was creating.`);
 			return;
 		}
-		
+
 		createPage({
 			path: _path,
 			component: ComingSoonPage,
-			context: {}
+			context: {},
 		});
 
 		console.info(`${_path} => ComingSoonPage`);
-    });
-    
-    console.log("\n\n");
-}
+	});
+
+	console.log("\n\n");
+};

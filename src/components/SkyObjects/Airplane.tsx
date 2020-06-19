@@ -1,32 +1,34 @@
 import React from "react";
 
-const Airplane = ({ width  = "1300", height = "900" }) => (
-    <div className="airplane-container">
-    	<svg
-    		version="1.1" 
-    		xmlns="http://www.w3.org/2000/svg" 
-    		x="0px" 
-    		y="0px" 
-    		width={`${width}px`}
-    		height={`${height}px`}
-    		viewBox={`0 0 ${width} ${height}`}
-    		enableBackground={`new 0 0 ${width} ${height}`}
-    		space="preserve" 
-    		className="airplane"
-    	>
-            <defs>
-                <linearGradient id="airplane-gradient">
-                    <stop offset="0%" stopColor="var(--color-stop-start)" />
-                    <stop offset="50%" stopColor="var(--color-stop-midlle)" />
-                    <stop offset="90%" stopColor="var(--color-stop-finish)" />
-                </linearGradient>
-            </defs>
+const Airplane = ({ width = "1300", height = "900" }) => (
+	<div className="airplane-container">
+		<svg
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			x="0px"
+			y="0px"
+			width={`${width}px`}
+			height={`${height}px`}
+			viewBox={`0 0 ${width} ${height}`}
+			enableBackground={`new 0 0 ${width} ${height}`}
+			// @ts-ignore
+			space="preserve"
+			className="airplane"
+		>
+			<defs>
+				<linearGradient id="airplane-gradient">
+					<stop offset="0%" stopColor="var(--color-stop-start)" />
+					<stop offset="50%" stopColor="var(--color-stop-midlle)" />
+					<stop offset="90%" stopColor="var(--color-stop-finish)" />
+				</linearGradient>
+			</defs>
 
-            <g 
-                transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)"
-                fill="url(#airplane-gradient)"
-            >
-                <path d="M6586 5373 c5 -410 3 -573 -10 -782 -8 -145 -17 -265 -18 -266 -2 -1
+			<g
+				transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)"
+				fill="url(#airplane-gradient)"
+			>
+				<path
+					d="M6586 5373 c5 -410 3 -573 -10 -782 -8 -145 -17 -265 -18 -266 -2 -1
                 -374 -18 -828 -39 -1151 -51 -2992 -134 -3189 -143 l-163 -8 -167 133 c-91 74
                 -170 137 -175 142 -4 4 -18 79 -30 167 l-22 158 -110 12 c-60 6 -128 12 -151
                 12 -40 1 -43 -1 -43 -25 0 -19 -4 -25 -15 -20 -8 3 -252 196 -543 429 l-527
@@ -45,10 +47,11 @@ const Airplane = ({ width  = "1300", height = "900" }) => (
                 183 -23 92 -122 166 -324 245 -65 26 -143 66 -190 98 -228 156 -285 189 -412
                 234 -144 52 -409 87 -858 113 l-290 17 -1130 -52 c-621 -28 -1325 -61 -1564
                 -72 -239 -11 -435 -18 -436 -17 -1 2 -24 64 -52 138 -28 74 -151 399 -273 721
-                l-222 586 -211 37 c-117 20 -217 36 -224 36 -10 0 -11 -116 -7 -517z"/>
-            </g>
-    </svg>
-</div>
+                l-222 586 -211 37 c-117 20 -217 36 -224 36 -10 0 -11 -116 -7 -517z"
+				/>
+			</g>
+		</svg>
+	</div>
 );
 
 export default Airplane;

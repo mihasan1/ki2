@@ -12,7 +12,13 @@ import {
 
 import { maxTitleLen } from "./../utils";
 
-export const reducer = (state = initialState, action) => {
+import { Action } from "./../../../types";
+import { FeedbackFormState, ResponseStatusOK } from "./types";
+
+export const reducer = (
+	state: FeedbackFormState = initialState,
+	action: Action,
+) => {
 	switch (action.type) {
 		case setTitle: {
 			const title = action.payload;
@@ -34,7 +40,7 @@ export const reducer = (state = initialState, action) => {
 				type: action.payload,
 			};
 		case setResponseStatusOK: {
-			const responseStatusOK = action.payload;
+			const responseStatusOK: ResponseStatusOK = action.payload;
 
 			return {
 				...state,

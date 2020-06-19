@@ -6,7 +6,9 @@ import { Container, Box, Columns, Column } from "bloomer";
 import Layout from "./../layouts/Layout";
 import { NewsPreview } from "./../components";
 
-const MainPage = ({ location }) => {
+import { PageWithLocation } from "./../types";
+
+const MainPage: React.FC<PageWithLocation> = ({ location }) => {
 	const { edges } = useStaticQuery(graphql`
 		query {
 			allMarkdownRemark(
@@ -30,6 +32,7 @@ const MainPage = ({ location }) => {
 		}
 	`).allMarkdownRemark;
 
+	// @ts-ignore
 	const news = edges.map(({ node }, index) => {
 		let { html, frontmatter } = node;
 		return (

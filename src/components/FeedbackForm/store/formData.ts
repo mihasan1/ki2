@@ -1,4 +1,6 @@
-export const initialState = {
+import { FeedbackFormState } from "./types";
+
+export const initialState: FeedbackFormState = {
 	title: "",
 	description: "",
 	errorStatus: false,

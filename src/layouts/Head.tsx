@@ -6,7 +6,7 @@ import { menu } from "./../page_data/navbar.json";
 
 import { findMetaByPath, process } from "./../components";
 
-const Head = ({ path }) => {
+const Head = ({ path = "" }) => {
 	const obj = findMetaByPath(process(menu))(path);
 
 	const title = obj?.title ?? "";
@@ -16,6 +16,7 @@ const Head = ({ path }) => {
 	return (
 		<Helmet>
 			<title>Київський авіаційний технікум | {title} </title>
+			// @ts-ignore
 			<meta charset="utf-8" />
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta name="description" content={description} />

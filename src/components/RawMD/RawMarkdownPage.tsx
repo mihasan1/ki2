@@ -5,7 +5,17 @@ import { RawMarkdown } from "./index";
 
 import Layout from "./../../layouts/Layout";
 
-const RawMarkdownPage = ({ location, data }) => {
+import { Location } from "./../../types/index";
+
+export interface RawMarkdownPageProps {
+	location: Location;
+	data: any; // markdownRemark
+}
+
+const RawMarkdownPage: React.FC<RawMarkdownPageProps> = ({
+	location,
+	data,
+}) => {
 	const { markdownRemark } = data;
 	const html = markdownRemark?.html ?? "Щось погане трапилось!";
 
@@ -13,14 +23,12 @@ const RawMarkdownPage = ({ location, data }) => {
 		<Layout location={location}>
 			<RawMarkdown html={html} />
 		</Layout>
-	)
-}
+	);
+};
 
 export const pageQuery = graphql`
 	query($page: String!) {
-		markdownRemark(fileAbsolutePath: 
-			{ regex: $page }
-		) {
+		markdownRemark(fileAbsolutePath: { regex: $page }) {
 			html
 		}
 	}

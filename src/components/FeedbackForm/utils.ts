@@ -1,6 +1,12 @@
+import { Issue } from "./../../types";
+
 export const maxTitleLen = 100;
 
-export const createIssue = async ({ title, description, type }) => {
+export const createIssue = async ({
+	title,
+	description,
+	type,
+}: Issue): Promise<Response> => {
 	const repo = "ki2";
 	const owner = "faramozzayw";
 

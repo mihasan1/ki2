@@ -5,9 +5,11 @@ import GoogleMapsLocation from "./../components/GoogleMapsLocation";
 
 import Layout from "./../layouts/Layout";
 
+import { PageWithLocation } from "./../types";
+
 const space = " ";
 
-const Contacts = ({ location }) => (
+const Contacts: React.FC<PageWithLocation> = ({ location }) => (
 	<Layout location={location}>
 		<Container hasTextAlign="centered">
 			<Content>
