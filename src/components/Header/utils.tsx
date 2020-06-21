@@ -23,6 +23,7 @@ export const process = (array: any[]): any => {
 			return {
 				...newItem,
 				child: process(newItem.child),
+				path: `/${newItem.path}`,
 			};
 		} else {
 			return {
@@ -60,6 +61,7 @@ export const generateNavigator = (array: any[]): any => {
 };
 
 export const menuConfigToFlat = (array: any[]): any => {
+	// @ts-ignore
 	return array.flatMap(item => {
 		if (Array.isArray(item.child)) {
 			return menuConfigToFlat(item.child);
@@ -72,5 +74,6 @@ export const menuConfigToFlat = (array: any[]): any => {
 export const createMenu = (config: any) => generateNavigator(process(config));
 
 export const findMetaByPath = (array: any[]): any => (searchPath: string) => {
+	// @ts-ignore
 	return menuConfigToFlat(array).find(({ path }) => path === searchPath);
 };

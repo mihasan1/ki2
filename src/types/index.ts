@@ -17,6 +17,13 @@ export interface MarkdownRemark {
 	html: string;
 }
 
+export interface PageConfig {
+	path: string;
+	title: string;
+	icon_name?: string | null;
+	child?: PageConfig[] | null;
+}
+
 // props
 export interface PageMetadata {
 	path: string;
