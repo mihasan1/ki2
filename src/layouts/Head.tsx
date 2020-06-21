@@ -33,6 +33,15 @@ const Head = ({ path = "" }) => {
 				name="google-site-verification"
 				content="vhihO45YdckDZzt3kbUGzzm56NK61QO1ri2SbcmN-qQ"
 			/>
+			{/* Include Font Awesome 5 */}
+			<link
+				rel="stylesheet"
+				href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+			/>
+			<link
+				rel="stylesheet"
+				href="https://use.fontawesome.com/releases/v5.13.1/css/v4-shims.css"
+			/>
 		</Helmet>
 	);
 };

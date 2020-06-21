@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Icon } from "bloomer";
+
 import { Cloud, Airplane } from "./../components/SkyObjects";
 
 import Layout from "./../layouts/Layout";

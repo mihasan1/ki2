@@ -8,7 +8,6 @@
 		"bloomer": "^0.6.3",
 		"bulma": "^0.6.2",
 		"dotenv": "^8.2.0",
-		"font-awesome": "^4.7.0",
 		"gatsby": "^2.23.3",
 		"gatsby-link": "^2.4.1",
 		"gatsby-plugin-env-variables": "^1.0.2",
