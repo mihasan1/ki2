@@ -21,7 +21,6 @@ import { createMenu } from "./utils";
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);
-
 	const onClickNav = () => toggleMenu(!isActive);
 
 	const navLinkList = createMenu(navbar.menu);

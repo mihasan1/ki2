@@ -8,6 +8,7 @@ export interface FeedbackFormFooterProps {
 	errorStatus: boolean;
 	isLoading: boolean;
 	responseStatusOK: ResponseStatusOK;
+	darkmode?: boolean;
 }
 
 export const FeedbackFormFooter: React.FC<FeedbackFormFooterProps> = ({
@@ -15,6 +16,7 @@ export const FeedbackFormFooter: React.FC<FeedbackFormFooterProps> = ({
 	errorStatus = false,
 	isLoading = false,
 	responseStatusOK = null,
+	darkmode = false,
 }) => (
 	<ModalCardFooter>
 		<Button
@@ -23,10 +25,11 @@ export const FeedbackFormFooter: React.FC<FeedbackFormFooterProps> = ({
 			isColor={errorStatus ? "danger" : "success"}
 			isLoading={isLoading}
 			disabled={errorStatus || isLoading}
+			isOutlined={darkmode}
 		>
 			Відправити
 		</Button>
-		<Button isColor="warning" onClick={cancelHandler}>
+		<Button isColor="warning" onClick={cancelHandler} isOutlined={darkmode}>
 			Охрана отмєна
 		</Button>
 		{responseStatusOK !== null &&

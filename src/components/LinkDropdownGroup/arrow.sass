@@ -1,5 +1,3 @@
-@import "~bulma"
-
 .arrow
 	display: flex
 	align-items: baseline
@@ -15,13 +13,21 @@
 		cursor: pointer
 		opacity: 0.9
 		margin: 2%
-		color: $primary !important
+		color: hsl(171, 100%, 41%) !important
 		
 	&:hover .icon:nth-child(2)
-		background-color: rgb(232, 232, 232) !important
-		color: $info !important
+		background-color: transparent !important
+		color: hsl(204, 71%, 53%) !important
 		opacity: 1
 		transform: scale(1.25)
 		border-radius: 50%
 		border: 1px dashed black
 		transition: all .25s
+
+body.dark-mode
+    .arrow
+        &:hover
+            background-color: #171717 !important
+
+            .icon:nth-child(2)
+                border: 1px dashed white

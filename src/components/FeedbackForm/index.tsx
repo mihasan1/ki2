@@ -14,6 +14,10 @@ import {
 	Help,
 } from "bloomer";
 
+import useDarkMode from "use-dark-mode";
+
+import "./index.css";
+
 import {
 	setDescriptionCreators,
 	setTitleCreators,
@@ -30,6 +34,7 @@ import { maxTitleLen, createIssue } from "./utils";
 
 const FeedbackForm = () => {
 	const [modalStatus, toggleModal] = useState(false);
+	const darkmode = useDarkMode();
 
 	const [
 		{ title, description, errorStatus, type, isLoading, responseStatusOK },
@@ -72,11 +77,16 @@ const FeedbackForm = () => {
 
 	return (
 		<>
-			<Button onClick={openModal}>Знайшли помилку?</Button>
-			<Modal isActive={modalStatus} style={{ textAlign: "left" }}>
+			<Button onClick={openModal} isColor="warning" isInverted={darkmode.value}>
+				Знайшли помилку?
+			</Button>
+			<Modal isActive={modalStatus} hasTextAlign="left">
 				<ModalBackground />
 				<ModalCard>
-					<FeedbackFormHeader closeModal={closeModal} />
+					<FeedbackFormHeader
+						closeModal={closeModal}
+						darkmode={darkmode.value}
+					/>
 					<ModalCardBody>
 						<form onSubmit={submitHandler} id="feedback_form">
 							<Field>
@@ -139,6 +149,7 @@ const FeedbackForm = () => {
 						errorStatus={errorStatus}
 						isLoading={isLoading}
 						responseStatusOK={responseStatusOK}
+						darkmode={darkmode.value}
 					/>
 				</ModalCard>
 			</Modal>

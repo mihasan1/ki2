@@ -10,6 +10,8 @@ import { RawMarkdown } from "./../components";
 
 import { Location, MarkdownRemark } from "./../types";
 
+import useDarkMode from "use-dark-mode";
+
 export interface NewsTemplateProps {
 	location: Location;
 	data: {
@@ -22,11 +24,17 @@ const NewsTemplate: React.FC<NewsTemplateProps> = ({ data, location }) => {
 	const { frontmatter, html } = markdownRemark;
 	const { title } = frontmatter;
 
+	const darkmode = useDarkMode();
+
 	return (
 		<Layout location={location}>
 			<Container>
 				<Box>
-					<Title isSize={4} tag="h4">
+					<Title
+						isSize={4}
+						tag="h4"
+						hasTextColor={darkmode.value ? "primary" : "info"}
+					>
 						# {title ?? "Новина без назви - просто новина"}
 					</Title>
 				</Box>

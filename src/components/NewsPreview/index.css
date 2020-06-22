@@ -1,0 +1,20 @@
+#NewsPreview .card {
+	margin-block-start: 2vmax;
+	margin-block-end: 2vmax;
+}
+
+#NewsPreview .card-footer {
+	border: 0;
+}
+
+#NewsPreview .card-footer-item {
+	border: 0;
+}
+
+.dark-mode #NewsPreview .card {
+	background-color: var(--dark-mode-bg);
+	color: var(--dark-mode-text) !important;
+}
+.dark-mode #NewsPreview .content * {
+	color: var(--dark-mode-text-color) !important;
+}

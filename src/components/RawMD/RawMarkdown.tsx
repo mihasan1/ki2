@@ -8,7 +8,7 @@ export interface RawMarkdownProps {
 const RawMarkdown: React.FC<RawMarkdownProps> = ({ html }) => {
 	return (
 		<Container>
-			<Box>
+			<Box className="box-raw-markdown-remark">
 				<Content>
 					<div
 						dangerouslySetInnerHTML={{ __html: html }}

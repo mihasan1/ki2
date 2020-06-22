@@ -1,0 +1,15 @@
+.dark-mode .modal-card * {
+	background: var(--dark-mode-bg);
+}
+
+.dark-mode .modal-card .modal-card-title {
+	font-weight: bold;
+}
+
+.dark-mode .modal-card label {
+	color: var(--dark-mode-text-color) !important;
+}
+
+.dark-mode .modal-card .field *::placeholder {
+	filter: invert(1);
+}

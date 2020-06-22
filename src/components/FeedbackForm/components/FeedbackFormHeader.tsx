@@ -2,9 +2,14 @@ import React from "react";
 
 import { ModalCardTitle, ModalCardHeader, Delete } from "bloomer";
 
-export const FeedbackFormHeader = ({ closeModal = () => {} }) => (
+export const FeedbackFormHeader = ({
+	closeModal = () => {},
+	darkmode = false,
+}) => (
 	<ModalCardHeader>
-		<ModalCardTitle>Опишіть свою знахідку</ModalCardTitle>
-		<Delete onClick={closeModal} />
+		<ModalCardTitle hasTextColor={darkmode ? "primary" : ""}>
+			Опишіть свою знахідку
+		</ModalCardTitle>
+		<Delete onClick={closeModal} isSize="medium" />
 	</ModalCardHeader>
 );

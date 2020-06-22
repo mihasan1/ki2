@@ -1,0 +1,4 @@
+.dark-mode #footer {
+	background-color: var(--dark-mode-bg) !important;
+	color: var(--dark-mode-text-color) !important;
+}

@@ -1,6 +1,6 @@
 import RawMarkdown from "./RawMarkdown";
 import RawMarkdownPage from "./RawMarkdownPage";
 
-import "./index.sass";
+import "./index.css";
 
 export { RawMarkdown, RawMarkdownPage };
