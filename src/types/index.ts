@@ -2,6 +2,10 @@ export interface Location {
 	pathname: string;
 }
 
+export interface LocationObject {
+	location: Location;
+}
+
 export interface Post {
 	title: string;
 	date: Date;
