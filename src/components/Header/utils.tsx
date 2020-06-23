@@ -3,7 +3,9 @@ import React from "react";
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-export const process = (array: any[]): any => {
+import { PageConfig } from "./../../types";
+
+export const process = (array: PageConfig[]): PageConfig[] => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -60,20 +62,29 @@ export const generateNavigator = (array: any[]): any => {
 	});
 };
 
-export const menuConfigToFlat = (array: any[]): any => {
-	// @ts-ignore
-	return array.flatMap(item => {
-		if (Array.isArray(item.child)) {
-			return menuConfigToFlat(item.child);
-		} else {
-			return { ...item };
-		}
-	});
+export const menuConfigToFlat = (array: PageConfig[]): PageConfig[] => {
+	const processedArray = process(array);
+
+	const utils = (array: PageConfig[]) => {
+		// @ts-ignore
+		return array.flatMap(item => {
+			if (Array.isArray(item.child)) {
+				return utils(item.child);
+			} else {
+				return { ...item };
+			}
+		});
+	};
+
+	return utils(processedArray);
 };
 
 export const createMenu = (config: any) => generateNavigator(process(config));
 
-export const findMetaByPath = (array: any[]): any => (searchPath: string) => {
-	// @ts-ignore
-	return menuConfigToFlat(array).find(({ path }) => path === searchPath);
+export const findMetaByPath = (array: PageConfig[]): Function => (
+	searchPath: string,
+): PageConfig | undefined => {
+	const flatten = menuConfigToFlat(array);
+
+	return flatten.find(({ path }) => path.includes(searchPath));
 };

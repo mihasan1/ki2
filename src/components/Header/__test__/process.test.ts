@@ -1,10 +1,4 @@
-import {
-	menuConfigToFlat,
-	createMenu,
-	findMetaByPath,
-	process,
-	generateNavigator,
-} from "./../utils";
+import { createMenu, process, generateNavigator } from "./../utils";
 
 import { menu1, menu2, menu3, menu4 } from "./mock";
 

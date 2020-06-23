@@ -5,7 +5,7 @@ import { NavbarItem, Icon } from "bloomer";
 export interface NavbarLinkProps {
 	path: string;
 	title: string;
-	icon_name: string;
+	icon_name?: string | null;
 }
 
 const NavbarLink: React.FC<NavbarLinkProps> = ({
@@ -16,7 +16,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
 }) => (
 	<NavbarItem className={icon_name === "" ? "without-icon" : ""} {...others}>
 		<Link to={path} activeClassName="has-text-success">
-			{icon_name !== null && <Icon isSize="large" className={icon_name} />}
+			{icon_name && <Icon isSize="large" className={icon_name} />}
 			{title}
 		</Link>
 	</NavbarItem>

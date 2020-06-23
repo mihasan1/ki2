@@ -70,6 +70,12 @@ export const menu3 = [
 						icon_name: "fa fa-book fa-2x",
 						child: null,
 					},
+					{
+						path: "20",
+						title: "Сучаність",
+						icon_name: "fa fa-book fa-2x",
+						child: null,
+					},
 				],
 			},
 		],
