@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 
 	return (
 		<>
-			<Head path={location.pathname} />
+			<Head pathname={location.pathname} />
 			<Hero isFullHeight isColor={darkMode.value ? "dark" : "light"}>
 				<HeroHeader>
 					<AppHeader />

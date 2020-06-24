@@ -1,14 +1,17 @@
 module.exports = {
 	siteMetadata: {
-		title: "Київський авіаційний технікум",
-		description: `Київський авіаційний технікум`,
+		defaultTitle: "Київський авіаційний технікум",
+		defaultDescription: `Київський авіаційний технікум`,
 		siteUrl: `https://kiat.now.sh/`,
+		titleTemplate: "Київський авіаційний технікум · %s",
 	},
 	plugins: [
 		"gatsby-plugin-react-helmet",
 		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-robots-txt`,
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-typescript`,
+		`gatsby-plugin-use-dark-mode`,
 		{
 			resolve: `gatsby-plugin-env-variables`,
 			options: {
