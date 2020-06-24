@@ -22,9 +22,9 @@ export const createIssue = async ({
 			Authorization: `Bearer ${token}`,
 		},
 		body: JSON.stringify({
-			title: title,
+			title: `[FEEDBACK]: ${title}`,
 			body: description,
-			labels: [type],
+			labels: ["feedback", type],
 		}),
 	});
 };
