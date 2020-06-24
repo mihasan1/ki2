@@ -10,6 +10,6 @@ export const FeedbackFormHeader = ({
 		<ModalCardTitle hasTextColor={darkmode ? "primary" : ""}>
 			Опишіть свою знахідку
 		</ModalCardTitle>
-		<Delete onClick={closeModal} isSize="medium" />
+		<Delete onClick={closeModal} isSize="medium" isHidden="mobile" />
 	</ModalCardHeader>
 );

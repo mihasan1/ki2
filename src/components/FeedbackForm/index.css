@@ -1,9 +1,13 @@
-.dark-mode .modal-card * {
-	background: var(--dark-mode-bg);
+.dark-mode .modal-card header {
+	overflow-x: auto;
 }
 
-.dark-mode .modal-card .modal-card-title {
-	font-weight: bold;
+.dark-mode .modal-card button.delete {
+	filter: invert(1);
+}
+
+.dark-mode .modal-card * {
+	background: var(--dark-mode-bg);
 }
 
 .dark-mode .modal-card label {

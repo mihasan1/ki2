@@ -26,7 +26,7 @@ export const reducer = (
 			return {
 				...state,
 				title,
-				errorStatus: state.errorStatus || maxTitleLen - title.length < 0,
+				errorStatus: maxTitleLen - title.length < 0,
 			};
 		}
 		case setDescription:

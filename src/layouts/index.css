@@ -3,3 +3,9 @@
 	--dark-mode-bg: #404040;
 	--dark-mode-text-color: #dbdbdb;
 }
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+	color: var(--dark-mode-text-color) !important;
+}
