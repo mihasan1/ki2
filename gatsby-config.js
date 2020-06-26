@@ -6,7 +6,8 @@ module.exports = {
 		titleTemplate: "Київський авіаційний технікум · %s",
 	},
 	plugins: [
-		"gatsby-plugin-react-helmet",
+		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-preact`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-robots-txt`,
 		`gatsby-plugin-sass`,
