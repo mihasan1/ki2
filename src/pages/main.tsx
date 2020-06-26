@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { Container, Box, Columns, Column } from "bloomer";
+import { Container, Columns, Column } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 import { NewsPreview } from "./../components";

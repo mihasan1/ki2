@@ -50,12 +50,7 @@ const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
 						<small>Дата публікації: {date}</small>
 					</CardFooterItem>
 					<CardFooterItem>
-						<Button
-							isColor="light"
-							isOutlined={darkmode.value}
-							isPaddingless
-							isLink
-						>
+						<Button isColor="info" isOutlined isPaddingless isLink>
 							<Link
 								style={{
 									padding: "0.75rem",

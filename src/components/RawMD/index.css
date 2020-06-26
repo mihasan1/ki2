@@ -12,7 +12,8 @@
 	background: var(--dark-mode-bg);
 }
 
-.dark-mode .raw-markdown-remark {
+.dark-mode .raw-markdown-remark,
+.dark-mode .raw-markdown-remark strong {
 	color: var(--dark-mode-text-color);
 }
 

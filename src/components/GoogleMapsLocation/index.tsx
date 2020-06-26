@@ -8,6 +8,7 @@ const GoogleMapsLocation = () => (
 			frameBorder="0"
 			style={{ border: 0 }}
 			allowFullScreen
+			title="Розташування Київського авіаційного технікуму"
 		/>
 	</div>
 );
