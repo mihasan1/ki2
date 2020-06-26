@@ -6,7 +6,7 @@ import "./index.css";
 import { Hero, HeroHeader, HeroBody } from "bloomer";
 import { Header as AppHeader, Footer as AppFooter } from "../components";
 
-import Head from "./Head";
+import SEO from "./SEO";
 
 import { Location } from "./../types/index";
 import { toggleIsLoading } from "../components/FeedbackForm/store/action";
@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 
 	return (
 		<>
-			<Head pathname={location.pathname} />
+			<SEO pathname={location.pathname} />
 			<Hero isFullHeight isColor={darkMode.value ? "dark" : "light"}>
 				<HeroHeader>
 					<AppHeader />

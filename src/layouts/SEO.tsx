@@ -13,7 +13,7 @@ export interface SiteMetadata {
 	titleTemplate: string;
 }
 
-const Head = ({ pathname = "" }) => {
+const SEO = ({ pathname = "" }) => {
 	const { site } = useStaticQuery(query);
 	const {
 		defaultDescription,
@@ -32,6 +32,8 @@ const Head = ({ pathname = "" }) => {
 
 	return (
 		<Helmet title={seo.title} titleTemplate={titleTemplate}>
+			<html lang="uk_UA" />
+
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta name="description" content={seo.description} />
 
@@ -76,4 +78,4 @@ const query = graphql`
 	}
 `;
 
-export default Head;
+export default SEO;
