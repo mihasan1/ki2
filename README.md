@@ -1,4 +1,4 @@
-![Build](https://github.com/faramozzayw/ki2/workflows/CI/badge.svg)
+![Build](https://github.com/faramozzayw/ki2/workflows/Build/badge.svg)
 
 ## Dev environment
 Run it by:
