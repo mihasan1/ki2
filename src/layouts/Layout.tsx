@@ -2,6 +2,7 @@ import React from "react";
 
 import "./all.sass";
 import "./index.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 import { Hero, HeroBody } from "bloomer";
 import { Header as AppHeader, Footer as AppFooter } from "../components";

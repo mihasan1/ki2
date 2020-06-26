@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"author": "faramozzayw",
 	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.13.1",
 		"@pauliescanlon/gatsby-remark-sticky-table": "^0.0.11",
 		"@types/classnames": "^2.2.10",
 		"bloomer": "^0.6.3",
