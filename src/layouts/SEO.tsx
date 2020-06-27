@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 import { menu } from "./../page_data/navbar.json";
 
-import { findMetaByPath, process } from "./../components";
+import { findMetaByPath, process } from "./../utils";
 
 export interface SiteMetadata {
 	defaultTitle: string;

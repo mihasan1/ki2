@@ -48,7 +48,8 @@
 		"dev_o": "gatsby develop -o",
 		"clean": "gatsby clean",
 		"test": "jest",
-		"wtest": "jest --watchAll"
+		"wtest": "jest --watchAll",
+		"update-snap": "jest --updateSnapshot"
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.10.1",

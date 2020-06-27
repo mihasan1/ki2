@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Footer, Container, Content, Columns, Column, Icon } from "bloomer";
 
 import useDarkMode from "use-dark-mode";

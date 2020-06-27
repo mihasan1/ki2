@@ -1,8 +1,8 @@
-import { findMetaByPath, process } from "./../utils";
+import { findMetaByPath } from "./../../src/utils";
 
-import { menu1, menu2, menu3, menu4 } from "./mock";
+import { menu1, menu2, menu3 } from "./../mock";
 
-import { PageConfig } from "./../../../types";
+import { PageConfig } from "./../../src/types";
 
 describe(`test 'menuConfigToFlat' function`, () => {
 	it("test with depth = 1", () => {

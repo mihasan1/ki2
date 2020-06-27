@@ -2,19 +2,19 @@
 	"title": "Київський авіаційний технікум",
 	"menu": [
 		{
-			"path":  "main", 
+			"path": "main",
 			"title": "Головна",
 			"icon_name": "fa fa-home fa-2x",
 			"child": null
 		},
 		{
-			"path":  "history", 
+			"path": "history",
 			"title": "Історія",
 			"icon_name": "fa fa-book fa-2x",
 			"child": null
 		},
 		{
-			"path":  "abiturient",
+			"path": "abiturient",
 			"title": "Абітурієнту",
 			"icon_name": "fa fa-users fa-2x",
 			"child": [
@@ -41,7 +41,7 @@
 		{
 			"path": "students",
 			"title": "Студенту",
-			"icon_name":"fa fa-graduation-cap fa-2x",
+			"icon_name": "fa fa-graduation-cap fa-2x",
 			"child": [
 				{
 					"path": "student_rules",
@@ -54,7 +54,7 @@
 					"title": "Розклад занять",
 					"icon_name": null,
 					"child": null
-				},	
+				},
 				{
 					"path": "success_monitor",
 					"title": "Екран успішності",
@@ -72,42 +72,42 @@
 		{
 			"path": "for_parents",
 			"title": "Батькам",
-			"icon_name":"fa fa-user-circle fa-2x",
+			"icon_name": "fa fa-user-circle fa-2x",
 			"child": [
-			{
+				{
 					"path": "priymalna_komisiya",
 					"title": "Положення про приймальну комісію",
 					"icon_name": null,
 					"child": null
-			},
-			{
+				},
+				{
 					"path": "to_parents",
 					"title": "Інформація батькам",
 					"icon_name": null,
 					"child": null
-			},
-			{
+				},
+				{
 					"path": "nabir",
 					"title": "Оголошення про набір",
 					"icon_name": null,
 					"child": null
-			},
-			{
+				},
+				{
 					"path": "election",
 					"title": "Вибори директора",
 					"icon_name": null,
 					"child": null
-			},
-			{
+				},
+				{
 					"path": "sertificate",
 					"title": "Сертифікат",
 					"icon_name": null,
 					"child": null
-			}
+				}
 			]
 		},
 		{
-			"path":  "contacts",
+			"path": "contacts",
 			"title": "Контакти",
 			"icon_name": "fa fa-address-card fa-2x",
 			"child": null

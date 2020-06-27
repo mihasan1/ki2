@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Link from "gatsby-link";
 import { NavbarDropdown, NavbarItem, Icon } from "bloomer";
 
-import { NavbarLink } from "./../index";
-
 import { PageMetadata } from "./../../types";
+import classnames from "classnames";
 
 import "./arrow.sass";
 
@@ -29,30 +27,30 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 	const [showStatus, updateShowStatus] = useState(false);
 
 	const toggleDropdown = () => updateShowStatus(!showStatus);
-	
+
 	let currentURL = false;
-	if (typeof window !== 'undefined') {
-		currentURL = window?.location?.href?.includes(path); 
+	if (typeof window !== "undefined") {
+		currentURL = window?.location?.href?.includes(path);
 	}
-	
+
 	return (
 		<NavbarItem
 			hasDropdown
 			isHoverable={false}
 			isActive={showStatus}
 			tabIndex={0}
+			onClick={toggleDropdown}
 			onKeyDown={toggleDropdown}
 		>
-			<div
-				className={`arrow ${currentURL ? "currentURL" : ""}`}
-				onClick={toggleDropdown}
-			>
+			<div className={classnames("arrow", { currentURL: currentURL })}>
 				<Item title={title} icon_name={icon_name} />
 				<Icon className="fa fa-arrow-down mark" isSize="medium" />
 			</div>
-			<NavbarDropdown isHidden={!showStatus}>{children}</NavbarDropdown>
+			<NavbarDropdown isHidden={!showStatus} isBoxed>
+				{children}
+			</NavbarDropdown>
 		</NavbarItem>
 	);
 };
 
-export default LinkDropdownGroup;
+export { LinkDropdownGroup };

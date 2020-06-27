@@ -1,7 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 
-const getPagePaths = array => {
+// start copypast from ./src/utils.tsx :(
+
+const process = array => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -18,19 +20,34 @@ const getPagePaths = array => {
 				};
 			});
 
-			return getPagePaths(newItem.child);
+			return {
+				...newItem,
+				child: process(newItem.child),
+				path: `/${newItem.path}`,
+			};
 		} else {
 			return {
+				...newItem,
 				path: `/${parentPath}`,
 			};
 		}
 	});
 };
 
+const getPagePaths = array => {
+	return array.flatMap(item => {
+		if (Array.isArray(item.child)) {
+			return getPagePaths(item.child);
+		} else {
+			return { ...item };
+		}
+	});
+};
+
+// end copypast from ./src/utils.tsx :(
+
 const getFlatPagePaths = data =>
-	getPagePaths(data)
-		.flat()
-		.map(pathObj => pathObj.path);
+	getPagePaths(process(data)).map(pathObj => pathObj.path);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
 	const { createPage } = actions;

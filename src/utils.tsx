@@ -1,9 +1,8 @@
 import React from "react";
 
-import NavbarLink from "./../NavbarLink";
-import LinkDropdownGroup from "./../LinkDropdownGroup";
+import { NavbarLink, LinkDropdownGroup } from "./components";
 
-import { PageConfig } from "./../../types";
+import { PageConfig } from "./types";
 
 export const process = (array: PageConfig[]): PageConfig[] => {
 	return array.map(item => {

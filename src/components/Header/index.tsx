@@ -16,7 +16,7 @@ import useDarkMode from "use-dark-mode";
 
 import navbar from "./../../page_data/navbar.json";
 
-import { createMenu } from "./utils";
+import { createMenu } from "./../../utils";
 
 const Menu = () => {
 	const [isActive, toggleMenu] = useState(false);
