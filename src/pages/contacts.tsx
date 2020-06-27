@@ -35,7 +35,7 @@ const Contacts: React.FC<PageWithLocation> = ({ location }) => (
 				<p>
 					Графік роботи:
 					<br />
-					Пн.-Пт. 8:00-16:30 без перерви.
+					Пн.-Пт. 8:00-18:00 без перерви.
 				</p>
 
 				<GoogleMapsLocation />
