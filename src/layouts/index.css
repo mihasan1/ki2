@@ -13,8 +13,3 @@
 .layout {
 	padding-top: calc(5rem - 5vh);
 }
-
-.content a:hover {
-	color: #8ad1ff;
-	text-decoration: underline;
-}
