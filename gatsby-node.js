@@ -136,3 +136,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 	console.log("\n\n");
 };
+
+exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+	if (getConfig().mode === "production") {
+		actions.setWebpackConfig({
+			devtool: false,
+		});
+	}
+};
