@@ -21,7 +21,6 @@ exports[`renders correctly 1`] = `
             Made with
             <span
               className="icon"
-              onClick={[Function]}
             >
               <i
                 aria-hidden="true"
@@ -195,6 +194,27 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="theme-switch-wrapper"
+    >
+      <label
+        className="theme-switch"
+        htmlFor="checkbox"
+      >
+        <input
+          checked={false}
+          id="checkbox"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <div
+          className="slider round"
+        />
+      </label>
+      <em>
+        Увімкнути тьомну тему!
+      </em>
     </div>
   </div>
 </footer>

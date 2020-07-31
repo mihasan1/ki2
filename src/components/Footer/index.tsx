@@ -1,15 +1,12 @@
 import React from "react";
 import { Footer, Container, Content, Columns, Column, Icon } from "bloomer";
 
-import useDarkMode from "use-dark-mode";
-
 import { FeedbackForm } from "./../index";
 
 import "./index.css";
+import ThemeSwitch from "../ThemeSwitch";
 
 const AppFooter: React.FC = () => {
-	const { toggle } = useDarkMode();
-
 	return (
 		<Footer id="footer">
 			<Container>
@@ -18,11 +15,7 @@ const AppFooter: React.FC = () => {
 						<Column isSize="1/2">
 							<p>
 								Made with
-								<Icon
-									hasTextColor="danger"
-									className="fa fa-heart"
-									onClick={toggle}
-								/>
+								<Icon hasTextColor="danger" className="fa fa-heart" />
 								by <a href="https://github.com/faramozzayw">faramozzayw</a>
 							</p>
 						</Column>
@@ -31,6 +24,7 @@ const AppFooter: React.FC = () => {
 						</Column>
 					</Columns>
 				</Content>
+				<ThemeSwitch />
 			</Container>
 		</Footer>
 	);
