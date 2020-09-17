@@ -1,15 +1,5 @@
 import { initialState } from "./formData";
 
-import {
-	setDescription,
-	setTitle,
-	setError,
-	setType,
-	setResponseStatusOK,
-	toggleIsLoading,
-	reset,
-} from "./action";
-
 import { maxTitleLen } from "./../utils";
 
 import { Action } from "./../../../types";
@@ -20,7 +10,7 @@ export const reducer = (
 	action: Action,
 ) => {
 	switch (action.type) {
-		case setTitle: {
+		case "setTitle": {
 			const title = action.payload;
 
 			return {
@@ -29,17 +19,17 @@ export const reducer = (
 				errorStatus: maxTitleLen - title.length < 0,
 			};
 		}
-		case setDescription:
+		case "setDescription":
 			return {
 				...state,
 				description: action.payload,
 			};
-		case setType:
+		case "setType":
 			return {
 				...state,
 				type: action.payload,
 			};
-		case setResponseStatusOK: {
+		case "setResponseStatusOK": {
 			const responseStatusOK: ResponseStatusOK = action.payload;
 
 			return {
@@ -47,12 +37,12 @@ export const reducer = (
 				responseStatusOK,
 			};
 		}
-		case toggleIsLoading:
+		case "toggleIsLoading":
 			return {
 				...state,
 				isLoading: action.payload,
 			};
-		case reset:
+		case "reset":
 			return { ...initialState };
 		default:
 			throw new Error();

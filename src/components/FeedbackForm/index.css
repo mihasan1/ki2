@@ -1,3 +1,21 @@
+.modal-card {
+	--bg-light: rgba(10 10 10 / 5%);
+	--bg-dark: rgba(10 10 10 / 15%);
+
+	--text-light: hsl(220, 5%, 15%);
+	--text-dark: hsl(235, 50%, 95%);
+}
+
+.modal-card .input,
+.modal-card .textarea {
+	background: var(--bg-light);
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px solid rgb(150, 164, 194);
+	border-radius: 0;
+	color: var(--text-light);
+}
+
 .dark-mode .modal-card header {
 	overflow-x: auto;
 }
@@ -11,9 +29,16 @@
 }
 
 .dark-mode .modal-card label {
-	color: var(--dark-mode-text-color) !important;
+	color: var(--dark-mode-text-color);
 }
 
-.dark-mode .modal-card .field *::placeholder {
-	filter: invert(1);
+.dark-mode .modal-card .input::placeholder,
+.dark-mode .modal-card .textarea::placeholder {
+	color: aliceblue;
+}
+
+.dark-mode .modal-card .input,
+.dark-mode .modal-card .textarea {
+	background: var(--bg-dark);
+	color: var(--text-dark);
 }

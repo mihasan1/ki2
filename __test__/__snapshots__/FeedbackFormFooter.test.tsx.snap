@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<body>
+  <div>
+    <footer
+      class="modal-card-foot"
+    >
+      <button
+        class="button is-success"
+        form="feedback_form"
+        type="submit"
+      >
+        Відправити
+      </button>
+      <button
+        class="button is-warning"
+        type="button"
+      >
+        Відмінити
+      </button>
+    </footer>
+  </div>
+</body>
+`;

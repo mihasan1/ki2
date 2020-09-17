@@ -19,12 +19,12 @@ import useDarkMode from "use-dark-mode";
 import "./index.css";
 
 import {
-	setDescriptionCreators,
-	setTitleCreators,
-	setTypeCreators,
-	setResponseStatusOKCreators,
-	toggleIsLoadingCreators,
-	resetCreators,
+	setDescription,
+	setTitle,
+	setType,
+	setResponseStatusOK,
+	toggleIsLoading,
+	reset,
 } from "./store/action";
 import { initialState } from "./store/formData";
 import { reducer } from "./store/reducer";
@@ -42,35 +42,39 @@ const FeedbackForm = () => {
 	] = useReducer(reducer, initialState);
 
 	const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(setTitleCreators(e.target.value));
+		dispatch(setTitle(e.target.value));
 	};
 
 	const changeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-		dispatch(setDescriptionCreators(e.target.value));
+		dispatch(setDescription(e.target.value));
 	};
 
 	const changeType = (e: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(setTypeCreators(e.target.value));
+		dispatch(setType(e.target.value));
 	};
 
 	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		dispatch(toggleIsLoadingCreators(true));
+		dispatch(toggleIsLoading(true));
 
-		createIssue({
-			title,
-			description,
-			type,
-		})
-			.then(response => dispatch(setResponseStatusOKCreators(response.ok)))
-			.catch(() => dispatch(setResponseStatusOKCreators(false)))
-			.finally(() => dispatch(toggleIsLoadingCreators(false)));
+		if (!!title.trim() && !!description.trim()) {
+			createIssue({
+				title,
+				description,
+				type,
+			})
+				.then(response => dispatch(setResponseStatusOK(response.ok)))
+				.catch(() => dispatch(setResponseStatusOK(false)))
+				.finally(() => dispatch(toggleIsLoading(false)));
+		} else {
+			alert("Check your data");
+		}
 	};
 
 	const openModal = () => toggleModal(true);
 	const closeModal = () => {
 		toggleModal(false);
-		dispatch(resetCreators());
+		dispatch(reset());
 	};
 
 	const currentLen = maxTitleLen - title.length;
@@ -81,7 +85,7 @@ const FeedbackForm = () => {
 				Знайшли помилку?
 			</Button>
 			<Modal isActive={modalStatus} hasTextAlign="left">
-				<ModalBackground />
+				<ModalBackground onClick={closeModal} />
 				<ModalCard>
 					<FeedbackFormHeader
 						closeModal={closeModal}
@@ -89,36 +93,37 @@ const FeedbackForm = () => {
 					/>
 					<ModalCardBody>
 						<form onSubmit={submitHandler} id="feedback_form">
-							<Field>
-								<Label>Короткий опис проблеми</Label>
-								<Control>
-									<Input
-										type="text"
-										placeholder="Короткий опис знахідки"
-										value={title}
-										onChange={changeTitle}
-										required
-									/>
-									<Help
-										isColor={errorStatus ? "danger" : "success"}
-										hasTextAlign="right"
-									>
-										{currentLen}/{maxTitleLen}
-									</Help>
-								</Control>
-							</Field>
-							<Field>
-								<Label>Детальний опис...</Label>
-								<Control>
-									<TextArea
-										placeholder={"Детальний опис..."}
-										value={description}
-										onChange={changeDescription}
-										required
-									/>
-								</Control>
-							</Field>
-							{/*
+							<fieldset disabled={isLoading}>
+								<Field>
+									<Label>Короткий опис проблеми</Label>
+									<Control>
+										<Input
+											type="text"
+											placeholder="Короткий опис знахідки"
+											value={title}
+											onChange={changeTitle}
+											required
+										/>
+										<Help
+											isColor={errorStatus ? "danger" : "success"}
+											hasTextAlign="right"
+										>
+											{currentLen}/{maxTitleLen}
+										</Help>
+									</Control>
+								</Field>
+								<Field>
+									<Label>Детальний опис...</Label>
+									<Control>
+										<TextArea
+											placeholder={"Детальний опис..."}
+											value={description}
+											onChange={changeDescription}
+											required
+										/>
+									</Control>
+								</Field>
+								{/*
 								<Field>
 									<Label>Зображення</Label>
 									<Control>
@@ -126,22 +131,23 @@ const FeedbackForm = () => {
 									</Control>
 								</Field>
 							*/}
-							<Field>
-								<Control onChange={changeType}>
-									<Radio name="req_type" value="bug" defaultChecked>
-										{" "}
-										Помилка{" "}
-									</Radio>
-									<Radio name="req_type" value="proposal">
-										{" "}
-										Побажання{" "}
-									</Radio>
-									<Radio name="req_type" value="feature">
-										{" "}
-										Ідея{" "}
-									</Radio>
-								</Control>
-							</Field>
+								<Field>
+									<Control onChange={changeType}>
+										<Radio name="req_type" value="bug" defaultChecked>
+											{" "}
+											Помилка{" "}
+										</Radio>
+										<Radio name="req_type" value="proposal">
+											{" "}
+											Побажання{" "}
+										</Radio>
+										<Radio name="req_type" value="feature">
+											{" "}
+											Ідея{" "}
+										</Radio>
+									</Control>
+								</Field>
+							</fieldset>
 						</form>
 					</ModalCardBody>
 					<FeedbackFormFooter

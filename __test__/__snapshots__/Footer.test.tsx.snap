@@ -50,6 +50,7 @@ exports[`renders correctly 1`] = `
           >
             <div
               className="modal-background"
+              onClick={[Function]}
             />
             <div
               className="modal-card"
@@ -75,100 +76,104 @@ exports[`renders correctly 1`] = `
                   id="feedback_form"
                   onSubmit={[Function]}
                 >
-                  <div
-                    className="field"
+                  <fieldset
+                    disabled={false}
                   >
-                    <label
-                      className="label"
-                    >
-                      Короткий опис проблеми
-                    </label>
                     <div
-                      className="control"
+                      className="field"
                     >
-                      <input
-                        className="input"
+                      <label
+                        className="label"
+                      >
+                        Короткий опис проблеми
+                      </label>
+                      <div
+                        className="control"
+                      >
+                        <input
+                          className="input"
+                          onChange={[Function]}
+                          placeholder="Короткий опис знахідки"
+                          required={true}
+                          type="text"
+                          value=""
+                        />
+                        <p
+                          className="help is-success has-text-right"
+                        >
+                          100
+                          /
+                          100
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="field"
+                    >
+                      <label
+                        className="label"
+                      >
+                        Детальний опис...
+                      </label>
+                      <div
+                        className="control"
+                      >
+                        <textarea
+                          className="textarea"
+                          onChange={[Function]}
+                          placeholder="Детальний опис..."
+                          required={true}
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="field"
+                    >
+                      <div
+                        className="control"
                         onChange={[Function]}
-                        placeholder="Короткий опис знахідки"
-                        required={true}
-                        type="text"
-                        value=""
-                      />
-                      <p
-                        className="help is-success has-text-right"
                       >
-                        100
-                        /
-                        100
-                      </p>
+                        <label
+                          className="radio"
+                        >
+                          <input
+                            defaultChecked={true}
+                            name="req_type"
+                            type="radio"
+                            value="bug"
+                          />
+                           
+                          Помилка
+                           
+                        </label>
+                        <label
+                          className="radio"
+                        >
+                          <input
+                            name="req_type"
+                            type="radio"
+                            value="proposal"
+                          />
+                           
+                          Побажання
+                           
+                        </label>
+                        <label
+                          className="radio"
+                        >
+                          <input
+                            name="req_type"
+                            type="radio"
+                            value="feature"
+                          />
+                           
+                          Ідея
+                           
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    className="field"
-                  >
-                    <label
-                      className="label"
-                    >
-                      Детальний опис...
-                    </label>
-                    <div
-                      className="control"
-                    >
-                      <textarea
-                        className="textarea"
-                        onChange={[Function]}
-                        placeholder="Детальний опис..."
-                        required={true}
-                        value=""
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="field"
-                  >
-                    <div
-                      className="control"
-                      onChange={[Function]}
-                    >
-                      <label
-                        className="radio"
-                      >
-                        <input
-                          defaultChecked={true}
-                          name="req_type"
-                          type="radio"
-                          value="bug"
-                        />
-                         
-                        Помилка
-                         
-                      </label>
-                      <label
-                        className="radio"
-                      >
-                        <input
-                          name="req_type"
-                          type="radio"
-                          value="proposal"
-                        />
-                         
-                        Побажання
-                         
-                      </label>
-                      <label
-                        className="radio"
-                      >
-                        <input
-                          name="req_type"
-                          type="radio"
-                          value="feature"
-                        />
-                         
-                        Ідея
-                         
-                      </label>
-                    </div>
-                  </div>
+                  </fieldset>
                 </form>
               </section>
               <footer
@@ -187,7 +192,7 @@ exports[`renders correctly 1`] = `
                   onClick={[Function]}
                   type="button"
                 >
-                  Охрана отмєна
+                  Відмінити
                 </button>
               </footer>
             </div>

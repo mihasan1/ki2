@@ -50,7 +50,17 @@ export interface Issue {
 	type: string;
 }
 
+type Actions =
+	| "setDescription"
+	| "setTitle"
+	| "setError"
+	| "setType"
+	| "setResponseStatus"
+	| "toggleIsLoading"
+	| "reset"
+	| "setResponseStatusOK";
+
 export interface Action {
-	type: Symbol | string;
+	type: Actions;
 	payload?: any;
 }

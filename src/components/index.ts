@@ -1,22 +1,17 @@
 export { LinkDropdownGroup } from "./LinkDropdownGroup";
 export { RawMarkdown, RawMarkdownPage } from "./RawMD";
-import NewsPreview from "./NewsPreview";
+export { default as NewsPreview } from "./NewsPreview";
 
 export { Cloud, Airplane } from "./SkyObjects";
 
-import NavbarLink from "./NavbarLink";
-import Header from "./Header";
-import Footer from "./Footer";
-
-import FeedbackForm from "./FeedbackForm";
-
-import ComingSoonPage from "./ComingSoonPage";
+export { default as NavbarLink } from "./NavbarLink";
+export { default as Header } from "./Header";
+export { default as Footer } from "./Footer";
 
 export {
-	NewsPreview,
-	NavbarLink,
-	Header,
-	Footer,
 	FeedbackForm,
-	ComingSoonPage,
-};
+	FeedbackFormFooter,
+	FeedbackFormHeader,
+} from "./FeedbackForm";
+
+export { default as ComingSoonPage } from "./ComingSoonPage";

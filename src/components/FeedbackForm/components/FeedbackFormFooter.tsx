@@ -4,10 +4,10 @@ import { ModalCardFooter, Button, Help } from "bloomer";
 import { ResponseStatusOK } from "./../store/types";
 
 export interface FeedbackFormFooterProps {
-	cancelHandler: () => void;
-	errorStatus: boolean;
-	isLoading: boolean;
-	responseStatusOK: ResponseStatusOK;
+	cancelHandler?: () => void;
+	errorStatus?: boolean;
+	isLoading?: boolean;
+	responseStatusOK?: ResponseStatusOK;
 	darkmode?: boolean;
 }
 
@@ -30,7 +30,7 @@ export const FeedbackFormFooter: React.FC<FeedbackFormFooterProps> = ({
 			Відправити
 		</Button>
 		<Button isColor="warning" onClick={cancelHandler} isOutlined={darkmode}>
-			Охрана отмєна
+			Відмінити
 		</Button>
 		{responseStatusOK !== null &&
 			(responseStatusOK ? (
