@@ -33,19 +33,26 @@ module.exports = {
 				path: `${__dirname}/src/page_data`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `page_files`,
+				path: `${__dirname}/src/media`,
+			},
+		},
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
-					`@pauliescanlon/gatsby-remark-sticky-table`,
-					`gatsby-remark-copy-linked-files`,
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
 							maxWidth: 590,
 						},
 					},
+					`@pauliescanlon/gatsby-remark-sticky-table`,
+					`gatsby-remark-copy-linked-files`,
 				],
 			},
 		},
