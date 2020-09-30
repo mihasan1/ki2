@@ -19,7 +19,9 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, location }) => {
-	const darkMode = useDarkMode(false);
+	const darkMode = useDarkMode(false, {
+		element: document.documentElement,
+	});
 
 	return (
 		<>
