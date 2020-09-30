@@ -45,7 +45,6 @@ $navbar-breakpoint: 1200px
 		flex-flow: row
 		align-items: center
 
-
 .dark-mode body
     $card-content-background-color: black !important
 
@@ -55,7 +54,7 @@ body::-webkit-scrollbar
 body::-webkit-scrollbar-track
     background-color: #fafafa
 
-.dark-mode body::-webkit-scrollbar-track 
+.dark-mode html::-webkit-scrollbar-track 
     background-color: var(--dark-mode-bg)
 
 body::-webkit-scrollbar-thumb
@@ -67,4 +66,4 @@ html
     scrollbar-width: thin
 
 html.dark-mode
-    scrollbar-color: var(--scrollbar-color) var(--dark-mode-bg) !important
+    scrollbar-color: var(--scrollbar-color) var(--dark-mode-bg)
