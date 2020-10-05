@@ -1,0 +1,40 @@
+.navbar
+	border-bottom: 1px solid #4a4a4a
+	flex-wrap: wrap
+
+.navbar-item
+	color: rgb(54, 54, 54) !important
+
+	&:hover
+		background-color: #e8e8e8
+    	color: #363636
+
+	a
+        display: block
+        color: #363636
+        
+.navbar-dropdown
+	.navbar-item.has-dropdown
+		padding-left: 0
+
+body.dark-mode
+    .navbar-dropdown
+        background-color: #363636
+
+    .navbar-item
+	    color: #C9C9C9 !important
+
+	    &:hover
+	    	background-color: #171717
+        	color: #363636
+
+    .navbar-item a:not(.has-text-success)
+        color: #C9C9C9 !important
+
+.navlink
+    display: flex
+
+@media screen and (max-width: 850px)
+    .navlink
+        flex-direction: column
+        flex-wrap: wrap    

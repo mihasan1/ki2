@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<body
+  class="light-mode"
+>
+  <div>
+    <button
+      class="button is-warning"
+      type="button"
+    >
+      Знайшли помилку?
+    </button>
+    <div
+      class="modal has-text-left"
+    >
+      <div
+        class="modal-background"
+      />
+      <div
+        class="modal-card"
+      >
+        <header
+          class="modal-card-head"
+        >
+          <h1
+            class="modal-card-title"
+          >
+            Опишіть свою знахідку
+          </h1>
+          <button
+            class="delete is-medium is-hidden-mobile"
+            type="button"
+          />
+        </header>
+        <section
+          class="modal-card-body"
+        >
+          <form
+            id="feedback_form"
+          >
+            <fieldset>
+              <div
+                class="field"
+              >
+                <label
+                  class="label"
+                >
+                  Короткий опис проблеми
+                </label>
+                <div
+                  class="control"
+                >
+                  <input
+                    class="input"
+                    placeholder="Короткий опис знахідки"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                  <p
+                    class="help is-success has-text-right"
+                  >
+                    100
+                    /
+                    100
+                  </p>
+                </div>
+              </div>
+              <div
+                class="field"
+              >
+                <label
+                  class="label"
+                >
+                  Детальний опис...
+                </label>
+                <div
+                  class="control"
+                >
+                  <textarea
+                    class="textarea"
+                    placeholder="Детальний опис..."
+                    required=""
+                  />
+                </div>
+              </div>
+              <div
+                class="field"
+              >
+                <div
+                  class="control"
+                >
+                  <label
+                    class="radio"
+                  >
+                    <input
+                      checked=""
+                      name="req_type"
+                      type="radio"
+                      value="bug"
+                    />
+                     
+                    Помилка
+                     
+                  </label>
+                  <label
+                    class="radio"
+                  >
+                    <input
+                      name="req_type"
+                      type="radio"
+                      value="proposal"
+                    />
+                     
+                    Побажання
+                     
+                  </label>
+                  <label
+                    class="radio"
+                  >
+                    <input
+                      name="req_type"
+                      type="radio"
+                      value="feature"
+                    />
+                     
+                    Ідея
+                     
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+        <footer
+          class="modal-card-foot"
+        >
+          <button
+            class="button is-success"
+            form="feedback_form"
+            type="submit"
+          >
+            Відправити
+          </button>
+          <button
+            class="button is-warning"
+            type="button"
+          >
+            Відмінити
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+`;

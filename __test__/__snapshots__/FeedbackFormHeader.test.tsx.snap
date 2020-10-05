@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<body>
+  <div>
+    <header
+      class="modal-card-head"
+    >
+      <h1
+        class="modal-card-title"
+      >
+        Опишіть свою знахідку
+      </h1>
+      <button
+        class="delete is-medium is-hidden-mobile"
+        type="button"
+      />
+    </header>
+  </div>
+</body>
+`;
+
+exports[`renders correctly dark version 1`] = `
+<body>
+  <div>
+    <header
+      class="modal-card-head"
+    >
+      <h1
+        class="modal-card-title has-text-primary"
+      >
+        Опишіть свою знахідку
+      </h1>
+      <button
+        class="delete is-medium is-hidden-mobile"
+        type="button"
+      />
+    </header>
+  </div>
+</body>
+`;

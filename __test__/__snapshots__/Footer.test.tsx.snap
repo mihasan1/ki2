@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<footer
+  className="footer"
+  id="footer"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="columns"
+      >
+        <div
+          className="column is-half"
+        >
+          <p>
+            Made with
+            <span
+              className="icon"
+            >
+              <i
+                aria-hidden="true"
+                className="has-text-danger fa fa-heart"
+              />
+            </span>
+            by 
+            <a
+              href="https://github.com/faramozzayw"
+            >
+              faramozzayw
+            </a>
+          </p>
+        </div>
+        <div
+          className="column is-half has-text-right"
+        >
+          <button
+            className="button is-warning"
+            onClick={[Function]}
+            type="button"
+          >
+            Знайшли помилку?
+          </button>
+          <div
+            className="modal has-text-left"
+          >
+            <div
+              className="modal-background"
+              onClick={[Function]}
+            />
+            <div
+              className="modal-card"
+            >
+              <header
+                className="modal-card-head"
+              >
+                <h1
+                  className="modal-card-title"
+                >
+                  Опишіть свою знахідку
+                </h1>
+                <button
+                  className="delete is-medium is-hidden-mobile"
+                  onClick={[Function]}
+                  type="button"
+                />
+              </header>
+              <section
+                className="modal-card-body"
+              >
+                <form
+                  id="feedback_form"
+                  onSubmit={[Function]}
+                >
+                  <fieldset
+                    disabled={false}
+                  >
+                    <div
+                      className="field"
+                    >
+                      <label
+                        className="label"
+                      >
+                        Короткий опис проблеми
+                      </label>
+                      <div
+                        className="control"
+                      >
+                        <input
+                          className="input"
+                          onChange={[Function]}
+                          placeholder="Короткий опис знахідки"
+                          required={true}
+                          type="text"
+                          value=""
+                        />
+                        <p
+                          className="help is-success has-text-right"
+                        >
+                          100
+                          /
+                          100
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="field"
+                    >
+                      <label
+                        className="label"
+                      >
+                        Детальний опис...
+                      </label>
+                      <div
+                        className="control"
+                      >
+                        <textarea
+                          className="textarea"
+                          onChange={[Function]}
+                          placeholder="Детальний опис..."
+                          required={true}
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="field"
+                    >
+                      <div
+                        className="control"
+                        onChange={[Function]}
+                      >
+                        <label
+                          className="radio"
+                        >
+                          <input
+                            defaultChecked={true}
+                            name="req_type"
+                            type="radio"
+                            value="bug"
+                          />
+                           
+                          Помилка
+                           
+                        </label>
+                        <label
+                          className="radio"
+                        >
+                          <input
+                            name="req_type"
+                            type="radio"
+                            value="proposal"
+                          />
+                           
+                          Побажання
+                           
+                        </label>
+                        <label
+                          className="radio"
+                        >
+                          <input
+                            name="req_type"
+                            type="radio"
+                            value="feature"
+                          />
+                           
+                          Ідея
+                           
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </section>
+              <footer
+                className="modal-card-foot"
+              >
+                <button
+                  className="button is-success"
+                  disabled={false}
+                  form="feedback_form"
+                  type="submit"
+                >
+                  Відправити
+                </button>
+                <button
+                  className="button is-warning"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Відмінити
+                </button>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="theme-switch-wrapper"
+    >
+      <label
+        className="theme-switch"
+        htmlFor="checkbox"
+      >
+        <input
+          checked={false}
+          id="checkbox"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <div
+          className="slider round"
+        />
+      </label>
+      <em>
+        Увімкнути тьомну тему!
+      </em>
+    </div>
+  </div>
+</footer>
+`;

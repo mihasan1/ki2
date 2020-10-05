@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="box box-raw-markdown-remark"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="raw-markdown-remark"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>test html</p>",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

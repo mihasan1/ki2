@@ -1,0 +1,25 @@
+.GoogleMapsLocation {
+	--shadow-color: #e3e3e3;
+
+	padding-top: 2vh;
+}
+
+.GoogleMapsLocation iframe {
+	border-radius: 1rem;
+	border-top-right-radius: 25%;
+	border-bottom-left-radius: 25px;
+	box-shadow: 0 0 5px 5px var(--shadow-color);
+
+	height: 75vh;
+	width: 80vmin;
+}
+
+.dark-mode .GoogleMapsLocation iframe {
+	box-shadow: 0px 0px 10px 5px var(--dark-mode-bg-color);
+}
+
+@media screen and (max-width: 450px) {
+	iframe {
+		border-radius: 1rem !important;
+	}
+}

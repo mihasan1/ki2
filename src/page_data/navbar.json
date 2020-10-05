@@ -1,0 +1,116 @@
+{
+	"title": "Київський авіаційний технікум",
+	"menu": [
+		{
+			"path": "main",
+			"title": "Головна",
+			"icon_name": "fa fa-home fa-2x",
+			"child": null
+		},
+		{
+			"path": "history",
+			"title": "Історія",
+			"icon_name": "fa fa-book fa-2x",
+			"child": null
+		},
+		{
+			"path": "abiturient",
+			"title": "Абітурієнту",
+			"icon_name": "fa fa-users fa-2x",
+			"child": [
+				{
+					"path": "memo",
+					"title": "Пам'ятка абітурієнту",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "invite_rules",
+					"title": "Правила прийому",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "exams",
+					"title": "Вступні іспити",
+					"icon_name": null,
+					"child": null
+				}
+			]
+		},
+		{
+			"path": "students",
+			"title": "Студенту",
+			"icon_name": "fa fa-graduation-cap fa-2x",
+			"child": [
+				{
+					"path": "student_rules",
+					"title": "Права та обов'язки студентів",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "schedule",
+					"title": "Розклад занять",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "success_monitor",
+					"title": "Екран успішності",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "starostat",
+					"title": "Старостат",
+					"icon_name": null,
+					"child": null
+				}
+			]
+		},
+		{
+			"path": "for_parents",
+			"title": "Батькам",
+			"icon_name": "fa fa-user-circle fa-2x",
+			"child": [
+				{
+					"path": "priymalna_komisiya",
+					"title": "Положення про приймальну комісію",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "to_parents",
+					"title": "Інформація батькам",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "nabir",
+					"title": "Оголошення про набір",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "election",
+					"title": "Вибори директора",
+					"icon_name": null,
+					"child": null
+				},
+				{
+					"path": "sertificate",
+					"title": "Сертифікат",
+					"icon_name": null,
+					"child": null
+				}
+			]
+		},
+		{
+			"path": "contacts",
+			"title": "Контакти",
+			"icon_name": "fa fa-address-card fa-2x",
+			"child": null
+		}
+	]
+}

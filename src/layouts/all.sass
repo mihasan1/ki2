@@ -1,0 +1,69 @@
+$navbar-breakpoint: 1200px
+
+@import "~bulma"
+
+*:focus,
+    outline: 2px solid $info
+
+.brand
+	font-weight: 600
+	font-style: italic
+	font-size: 3vmin
+	letter-spacing: 0.015rem
+	cursor: pointer
+
+	a
+		text-overflow: ellipsis
+		white-space: nowrap
+  		overflow: hidden
+		
+	#airplane
+		margin-left: 1vw
+		margin-right: 1vw
+
+.main-content:not(#sky)
+	align-items: flex-start !important
+
+.main-content
+  justify-content: center
+
+@media screen and (max-width: 450px)
+	.brand
+		a
+			font-size: 5vmin
+			
+		#airplane
+  		display: none
+
+.arrow
+	user-select: none
+	cursor: pointer
+
+.without-icon
+	a
+		display: flex
+		flex-flow: row
+		align-items: center
+
+.dark-mode body
+    $card-content-background-color: black !important
+
+body::-webkit-scrollbar 
+    width: .75rem
+
+body::-webkit-scrollbar-track
+    background-color: #fafafa
+
+.dark-mode html::-webkit-scrollbar-track 
+    background-color: var(--dark-mode-bg)
+
+body::-webkit-scrollbar-thumb
+    border-radius: 1rem
+    background-color: var(--scrollbar-color)
+
+html
+    scrollbar-color: var(--scrollbar-color) #fafafa
+    scrollbar-width: thin
+
+html.dark-mode
+    scrollbar-color: var(--scrollbar-color) var(--dark-mode-bg)

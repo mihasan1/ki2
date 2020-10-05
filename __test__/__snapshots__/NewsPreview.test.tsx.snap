@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test NewsPreview component render correctly 1`] = `
+<div
+  id="NewsPreview"
+>
+  <div
+    className="card"
+  >
+    <header
+      className="card-header"
+    >
+      <p
+        className="card-header-title has-text-info"
+      >
+        Нові новини
+      </p>
+    </header>
+    <div
+      className="card-content"
+    >
+      <div
+        className="content"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "
+        <h1>Ми всі помремо</h1>
+        <small>Дякуємо за увагу! Хорошого вечора!</small>
+    ...",
+            }
+          }
+        />
+        <br />
+      </div>
+    </div>
+    <footer
+      className="card-footer"
+    >
+      <p
+        className="card-footer-item has-text-left"
+      >
+        <small>
+          Дата публікації: 
+          2020-05-14
+        </small>
+      </p>
+      <p
+        className="card-footer-item"
+      >
+        <button
+          className="button is-link is-outlined is-info is-paddingless"
+          type="button"
+        >
+          <a
+            href="/bad_guy"
+            style={
+              Object {
+                "padding": "0.75rem",
+              }
+            }
+          >
+            Читати більше...
+          </a>
+        </button>
+      </p>
+    </footer>
+  </div>
+</div>
+`;

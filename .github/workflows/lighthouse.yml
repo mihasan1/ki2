@@ -1,0 +1,22 @@
+name: lighthouse
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Audit Vercel deploy preview
+      uses: jakejarvis/lighthouse-action@master
+      with:
+        url: 'https://kiat.now.sh/'
+        
+    - uses: actions/upload-artifact@master
+      with:
+        name: report
+        path: './report'
