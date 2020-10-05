@@ -57,3 +57,7 @@
 .raw-markdown-remark .center {
 	text-align: center;
 }
+
+.dark-mode .raw-markdown-remark th {
+	color: var(--dark-mode-text-color);
+}
