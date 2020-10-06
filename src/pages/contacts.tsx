@@ -16,7 +16,7 @@ const Contacts: React.FC<PageWithLocation> = ({ location }) => (
 				<Heading>м. Київ 03062 пр. Перемоги, 100/1</Heading>
 
 				<p>
-					тел.: <a href="tel:+380444430203">(044) 443-02-03</a>,{" "}
+					тел.: <a href="tel:+380444001668">(044) 400-16-68</a>,{" "}
 					<a href="tel:+380444002881">(044) 400-28-81</a> - приймальна директора
 					<br />
 					<a href="tel:+3800444545762">(044) 454-57-62</a> - навчальна частина
@@ -26,7 +26,9 @@ const Contacts: React.FC<PageWithLocation> = ({ location }) => (
 					моб.: <a href="tel:+380686865815">(068) 686-58-15</a>,{" "}
 					<a href="tel:+380937103158">(093) 710-31-58</a> - приймальна комісія
 				</p>
-
+				<p>
+					E-ail: <a href="mailto:kiat@ukr.net">kiat@ukr.net</a>
+				</p>
 				<p>
 					Графік роботи:
 					<br />
