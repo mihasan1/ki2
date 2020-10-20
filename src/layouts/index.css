@@ -11,7 +11,3 @@
 .dark-mode select {
 	color: var(--dark-mode-text-color) !important;
 }
-
-.layout {
-	padding-top: calc(5rem - 5vh);
-}

@@ -14,7 +14,6 @@ import { Location } from "./../types/index";
 import useDarkMode from "use-dark-mode";
 
 interface LayoutProps {
-	children?: React.ReactNode;
 	location: Location;
 }
 

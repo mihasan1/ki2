@@ -56,7 +56,13 @@ const Menu = () => {
 					"has-background-light": !darkmode.value,
 				})}
 			>
-				<NavbarEnd className="navlink">{navLinkList}</NavbarEnd>
+				<NavbarEnd
+					className={classnames("navlink", {
+						"has-background-dark has-text-white-ter": darkmode.value,
+					})}
+				>
+					{navLinkList}
+				</NavbarEnd>
 			</NavbarMenu>
 		</Navbar>
 	);
