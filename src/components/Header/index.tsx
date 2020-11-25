@@ -8,28 +8,30 @@ import {
 	NavbarEnd,
 	NavbarItem,
 } from "bloomer";
+import classnames from "classnames";
+import { DarkMode } from "use-dark-mode";
 
 import "./index.sass";
-
-import classnames from "classnames";
-import useDarkMode from "use-dark-mode";
 
 import navbar from "./../../page_data/navbar.json";
 
 import { createMenu } from "./../../utils";
 
-const Menu = () => {
+export interface MenuProps {
+	darkModeValue: DarkMode["value"];
+}
+
+const Menu: React.FC<MenuProps> = ({ darkModeValue }) => {
 	const [isActive, toggleMenu] = useState(false);
 	const onClickNav = () => toggleMenu(!isActive);
-	const darkmode = useDarkMode();
 
 	const navLinkList = createMenu(navbar.menu);
 
 	return (
 		<Navbar
 			className={classnames("is-fixed-top", {
-				"is-dark": darkmode.value,
-				"is-light": !darkmode.value,
+				"is-dark": darkModeValue,
+				"is-light": !darkModeValue,
 			})}
 		>
 			<NavbarBrand>
@@ -52,13 +54,13 @@ const Menu = () => {
 				hasTextAlign="left"
 				isActive={isActive}
 				className={classnames({
-					"has-background-dark": darkmode.value,
-					"has-background-light": !darkmode.value,
+					"has-background-dark": darkModeValue,
+					"has-background-light": !darkModeValue,
 				})}
 			>
 				<NavbarEnd
 					className={classnames("navlink", {
-						"has-background-dark has-text-white-ter": darkmode.value,
+						"has-background-dark has-text-white-ter": darkModeValue,
 					})}
 				>
 					{navLinkList}
