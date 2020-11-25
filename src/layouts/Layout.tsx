@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useDarkMode from "use-dark-mode";
+import useDarkMode, { DarkMode } from "use-dark-mode";
 import { Hero, HeroBody } from "bloomer";
 
 import "./all.sass";
@@ -26,20 +26,24 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 	return (
 		<>
 			<SEO pathname={location.pathname} />
-			<AppHeader darkModeValue={darkMode.value} />
-			<Hero
-				isFullHeight
-				isColor={darkMode.value ? "dark" : "light"}
-				className="layout"
-			>
-				<HeroBody
-					id={location.pathname === "/" ? "sky" : ""}
-					className="main-content"
-				>
-					{children}
-				</HeroBody>
-			</Hero>
-			<AppFooter />
+			{isClient && (
+				<>
+					<AppHeader darkModeValue={darkMode.value} />
+					<Hero
+						isFullHeight
+						isColor={darkMode.value ? "dark" : "light"}
+						className="layout"
+					>
+						<HeroBody
+							id={location.pathname === "/" ? "sky" : ""}
+							className="main-content"
+						>
+							{children}
+						</HeroBody>
+					</Hero>
+					<AppFooter />
+				</>
+			)}
 		</>
 	);
 };
