@@ -22,6 +22,8 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 			typeof window === "undefined" ? undefined : document.documentElement,
 	});
 
+	console.warn(`darkMode status: ${darkMode.value ? "on" : "off"}`);
+
 	return (
 		<>
 			<SEO pathname={location.pathname} />
