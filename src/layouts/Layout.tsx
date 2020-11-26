@@ -18,10 +18,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, location }) => {
-	const [isClient, setIsClient] = useState(false);
 	const darkMode = useDarkMode();
-
-	useEffect(() => setIsClient(true), []);
 
 	return (
 		<>
