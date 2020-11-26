@@ -200,27 +200,14 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="theme-switch-wrapper"
+    <span
+      className="icon is-large"
     >
-      <label
-        className="theme-switch"
-        htmlFor="checkbox"
-      >
-        <input
-          checked={false}
-          id="checkbox"
-          onChange={[Function]}
-          type="checkbox"
-        />
-        <div
-          className="slider round"
-        />
-      </label>
-      <em>
-        Увімкнути тьомну тему!
-      </em>
-    </div>
+      <i
+        aria-hidden="true"
+        className="fas fa-spinner fa-pulse"
+      />
+    </span>
   </div>
 </footer>
 `;
