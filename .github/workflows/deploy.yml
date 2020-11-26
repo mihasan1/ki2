@@ -10,36 +10,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    
-    - name: Install dependencies
-      run: yarn install
-    
-    - name: Build site
-      run: yarn build
-    
-    - name: Run tests
-      run: yarn test
-    
-    - name: Copy site files to cPanel via ssh
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        source: ${{ secrets.BUILD_DIR }}
-        target: ${{ secrets.TARGET_DIR }}
-        strip_components: 2
+      - uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build site
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Copy site files to cPanel via ssh
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: ${{ secrets.BUILD_DIR }}
+          target: ${{ secrets.TARGET_DIR }}
+          strip_components: 2
+
+      - name: Audit Vercel deploy preview
+        uses: jakejarvis/lighthouse-action@master
+        with:
+          url: ${{ secrets.SITE_URL }}
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: report
+          path: "./report"
