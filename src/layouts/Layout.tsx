@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import useDarkMode, { DarkMode } from "use-dark-mode";
+import React from "react";
+import useDarkMode from "use-dark-mode";
 import { Hero, HeroBody } from "bloomer";
 
 import "./all.sass";
@@ -11,7 +11,6 @@ import { Header as AppHeader, Footer as AppFooter } from "../components";
 import SEO from "./SEO";
 
 import { Location } from "./../types/index";
-import { Icon } from "bloomer/lib/elements/Icon";
 
 interface LayoutProps {
 	location: Location;
