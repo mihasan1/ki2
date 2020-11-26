@@ -22,24 +22,20 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 	return (
 		<>
 			<SEO pathname={location.pathname} />
-			{isClient && (
-				<>
-					<AppHeader darkModeValue={darkMode.value} />
-					<Hero
-						isFullHeight
-						isColor={darkMode.value ? "dark" : "light"}
-						className="layout"
-					>
-						<HeroBody
-							id={location.pathname === "/" ? "sky" : ""}
-							className="main-content"
-						>
-							{children}
-						</HeroBody>
-					</Hero>
-					<AppFooter />
-				</>
-			)}
+			<AppHeader darkModeValue={darkMode.value} />
+			<Hero
+				isFullHeight
+				isColor={darkMode.value ? "dark" : "light"}
+				className="layout"
+			>
+				<HeroBody
+					id={location.pathname === "/" ? "sky" : ""}
+					className="main-content"
+				>
+					{children}
+				</HeroBody>
+			</Hero>
+			<AppFooter />
 		</>
 	);
 };
