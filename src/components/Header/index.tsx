@@ -27,13 +27,11 @@ const Menu: React.FC<MenuProps> = ({ darkModeValue }) => {
 
 	const navLinkList = createMenu(navbar.menu);
 
+	const isColor = `is-${darkModeValue ? "dark" : "light"}`;
+	const hasBackground = `has-background-${darkModeValue ? "dark" : "light"}`;
+
 	return (
-		<Navbar
-			className={classnames("is-fixed-top", {
-				"is-dark": darkModeValue,
-				"is-light": !darkModeValue,
-			})}
-		>
+		<Navbar className={classnames("is-fixed-top", isColor)}>
 			<NavbarBrand>
 				<NavbarItem className="brand">
 					<span id="airplane" role="img" aria-label="airplane">
@@ -53,10 +51,7 @@ const Menu: React.FC<MenuProps> = ({ darkModeValue }) => {
 			<NavbarMenu
 				hasTextAlign="left"
 				isActive={isActive}
-				className={classnames({
-					"has-background-dark": darkModeValue,
-					"has-background-light": !darkModeValue,
-				})}
+				className={hasBackground}
 			>
 				<NavbarEnd
 					className={classnames("navlink", {
