@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import useDarkMode from "use-dark-mode";
 import { Hero, HeroBody } from "bloomer";
 
