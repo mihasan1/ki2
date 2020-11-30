@@ -1,28 +1,24 @@
 .arrow
-	display: flex
-	align-items: baseline
-	padding-right: 8px
-	
-	&:hover
-		background-color: rgb(232, 232, 232) !important
+    display: flex
+    align-items: baseline
+    padding-right: 8px
 
-	> .navbar-item
-		padding-right: 0
-	
-	> .icon
-		cursor: pointer
-		opacity: 0.9
-		margin: 2%
-		color: hsl(171, 100%, 41%) !important
-		
-	&:hover .icon:nth-child(2)
-		background-color: transparent !important
-		color: hsl(204, 71%, 53%) !important
-		opacity: 1
-		transform: scale(1.25)
-		border-radius: 50%
-		border: 1px dashed black
-		transition: all .25s
+    &:hover
+        background-color: rgb(232, 232, 232) !important
+
+    > .navbar-item
+        padding-right: 0
+
+    > .icon
+        transition: transform .5s
+        cursor: pointer
+        opacity: 0.9
+        margin: 2%
+        color: hsl(171, 100%, 41%) !important
+
+    &:hover .icon:nth-child(2)
+        color: hsl(204, 71%, 53%) !important
+        transform: scale(1.25)
 
 .arrow.currentURL
     .navbar-item
@@ -32,6 +28,3 @@ body.dark-mode
     .arrow
         &:hover
             background-color: #171717 !important
-
-            .icon:nth-child(2)
-                border: 1px dashed white

@@ -1,29 +1,28 @@
 .navbar
-	border-bottom: 1px solid #4a4a4a
-	flex-wrap: wrap
+    border-bottom: 1px solid #4a4a4a
+    flex-wrap: wrap
 
 .navbar-item
-	color: rgb(54, 54, 54) !important
+    color: rgb(54, 54, 54) !important
 
-	&:hover
-		background-color: #e8e8e8
-    	color: #363636
-
-	a
-        display: block
+    &:hover
+        background-color: #e8e8e8
         color: #363636
-        
+
+    a
+        color: #363636
+
 .navbar-dropdown
-	.navbar-item.has-dropdown
-		padding-left: 0
+    .navbar-item.has-dropdown
+        padding-left: 0
 
 body.dark-mode
     .navbar-item
-	    color: #C9C9C9 !important
+        color: #C9C9C9 !important
 
-	    &:hover
-	    	background-color: #171717
-        	color: #363636
+        &:hover
+            background-color: #171717
+            color: #363636
 
     .navbar-item a:not(.has-text-success)
         color: #C9C9C9 !important
@@ -34,4 +33,4 @@ body.dark-mode
 @media screen and (max-width: 850px)
     .navlink
         flex-direction: column
-        flex-wrap: wrap    
+        flex-wrap: wrap

@@ -2,3 +2,30 @@
 	background-color: var(--dark-mode-bg) !important;
 	color: var(--dark-mode-text-color) !important;
 }
+
+.contact,
+.controls_wrapper,
+.controls {
+	display: flex;
+}
+
+.controls_wrapper {
+	justify-content: flex-end;
+}
+
+.controls {
+	flex-flow: column;
+	width: max-content !important;
+	justify-content: flex-end;
+}
+
+.controls > :not(:first-child) {
+	margin-top: 1rem;
+}
+
+@media (max-width: 650px) {
+	#footer .columns .controls_wrapper,
+	#footer .columns .contact {
+		justify-content: center;
+	}
+}
