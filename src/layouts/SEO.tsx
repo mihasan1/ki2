@@ -32,7 +32,7 @@ const SEO = ({ pathname = "" }) => {
 
 	return (
 		<Helmet title={seo.title} titleTemplate={titleTemplate}>
-			<html lang="uk_UA" />
+			<html lang="uk_UA" className="has-navbar-fixed-top" />
 
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta name="description" content={seo.description} />

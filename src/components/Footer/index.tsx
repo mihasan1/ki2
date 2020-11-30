@@ -12,19 +12,26 @@ const AppFooter: React.FC = () => {
 			<Container>
 				<Content>
 					<Columns>
-						<Column isSize="1/2">
+						<Column isSize="1/2" className="contact">
 							<p>
-								Made with
+								© Київський авіаційний технікум <br />
+								м. Київ 03062 пр. Перемоги, 100/1 <br />
+								Створено з
 								<Icon hasTextColor="danger" className="fa fa-heart" />
-								by <a href="https://github.com/faramozzayw">faramozzayw</a>
 							</p>
 						</Column>
-						<Column isSize="1/2" hasTextAlign="right">
-							<FeedbackForm />
+						<Column
+							isSize="1/2"
+							className="controls_wrapper"
+							hasTextAlign="right"
+						>
+							<div className="controls">
+								<FeedbackForm />
+								<ThemeSwitch />
+							</div>
 						</Column>
 					</Columns>
 				</Content>
-				<ThemeSwitch />
 			</Container>
 		</Footer>
 	);

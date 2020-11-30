@@ -6,59 +6,58 @@ $navbar-breakpoint: 1200px
     outline: 2px solid $info
 
 .brand
-	font-weight: 600
-	font-style: italic
-	font-size: 3vmin
-	letter-spacing: 0.015rem
-	cursor: pointer
+    font-weight: 600
+    font-style: italic
+    font-size: 3vmin
+    letter-spacing: 0.015rem
+    cursor: pointer
 
-	a
-		text-overflow: ellipsis
-		white-space: nowrap
-  		overflow: hidden
-		
-	#airplane
-		margin-left: 1vw
-		margin-right: 1vw
+    a
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+
+    #airplane
+        margin-left: 1vw
+        margin-right: 1vw
 
 .main-content:not(#sky)
-	align-items: flex-start !important
+    align-items: flex-start !important
 
 .main-content
-  justify-content: center
+    justify-content: center
 
 @media screen and (max-width: 450px)
-	.brand
-		a
-			font-size: 5vmin
-			
-		#airplane
-  		display: none
+    .brand
+        a
+            font-size: 5vmin
+
+        #airplane
+            display: none
 
 .arrow
-	user-select: none
-	cursor: pointer
+    user-select: none
+    cursor: pointer
 
 .without-icon
-	a
-		display: flex
-		flex-flow: row
-		align-items: center
+    a
+        display: flex
+        flex-flow: row
+        align-items: center
 
-.dark-mode body
+body.dark-mode
     $card-content-background-color: black !important
 
-body::-webkit-scrollbar 
-    width: .75rem
+body::-webkit-scrollbar
+    width: .65rem
 
 body::-webkit-scrollbar-track
     background-color: #fafafa
 
-.dark-mode html::-webkit-scrollbar-track 
+body.dark-mode::-webkit-scrollbar-track
     background-color: var(--dark-mode-bg)
 
 body::-webkit-scrollbar-thumb
-    border-radius: 1rem
     background-color: var(--scrollbar-color)
 
 html
@@ -67,3 +66,9 @@ html
 
 html.dark-mode
     scrollbar-color: var(--scrollbar-color) var(--dark-mode-bg)
+
+.dark-mode
+    .hero, .navbar-dropdown, .navbar, .navbar-menu
+        background: $dark !important
+    .navbar-burger
+        color: #ffffff !important

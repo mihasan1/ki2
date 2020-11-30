@@ -1,33 +1,28 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
+import useDarkMode from "use-dark-mode";
+import { Hero, HeroBody } from "bloomer";
 
 import "./all.sass";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-import { Hero, HeroBody } from "bloomer";
 import { Header as AppHeader, Footer as AppFooter } from "../components";
 
 import SEO from "./SEO";
 
 import { Location } from "./../types/index";
 
-import useDarkMode from "use-dark-mode";
-
 interface LayoutProps {
-	children?: React.ReactNode;
 	location: Location;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, location }) => {
-	const darkMode = useDarkMode(false, {
-		element:
-			typeof window === "undefined" ? undefined : document.documentElement,
-	});
+	const darkMode = useDarkMode();
 
 	return (
 		<>
 			<SEO pathname={location.pathname} />
-			<AppHeader />
+			<AppHeader darkModeValue={darkMode.value} />
 			<Hero
 				isFullHeight
 				isColor={darkMode.value ? "dark" : "light"}
