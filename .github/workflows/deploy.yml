@@ -26,12 +26,33 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-
+        
+      - name: Run tests
+        run: yarn test
+        
       - name: Build site
         run: yarn build
 
-      - name: Run tests
-        run: yarn test
+      - name: Delete old useless files
+        uses: appleboy/ssh-action@master
+        env: 
+          SKIP_FILES: ${{ secrets.SKIP_FILES }}
+          TARGET_DIR: ${{ secrets.TARGET_DIR }}
+          TEST: "test env var"
+        with:
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script_stop: true
+          envs: SKIP_FILES,TARGET_DIR
+          script: |
+            export TEST=$TEST
+            echo $TEST
+            echo "test"
+            cd ~/$TARGET_DIR
+            pwd
+            ls
 
       - name: Copy site files to cPanel via ssh
         uses: appleboy/scp-action@master
@@ -44,7 +65,7 @@ jobs:
           target: ${{ secrets.TARGET_DIR }}
           strip_components: 2
 
-      - name: Audit Vercel deploy preview
+      - name: Audit of a deployed site
         uses: jakejarvis/lighthouse-action@master
         with:
           url: ${{ secrets.SITE_URL }}
