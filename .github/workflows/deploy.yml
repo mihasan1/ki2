@@ -32,6 +32,22 @@ jobs:
         
       - name: Build site
         run: yarn build
+    
+      - name: Delete old useless files
+        uses: appleboy/ssh-action@master
+        env: 
+          SKIP_FILES: ${{ secrets.SKIP_FILES }}
+          TARGET_DIR: ${{ secrets.TARGET_DIR }}
+        with:
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script_stop: true
+          envs: SKIP_FILES,TARGET_DIR
+          script: |
+            cd ${{ env.TARGET_DIR }}
+            find . -maxdepth 1 $(printf "! -name %s " $(echo ${{ env.SKIP_FILES }})) ! -name . ! -name ..  | xargs rm -rf
 
       - name: Copy site files to cPanel via ssh
         uses: appleboy/scp-action@master
