@@ -15,6 +15,15 @@
 	background-color: var(--dark-mode-bg);
 	color: var(--dark-mode-text) !important;
 }
+
 .dark-mode #NewsPreview .content * {
 	color: var(--dark-mode-text-color) !important;
+}
+
+.dark-mode #NewsPreview a {
+	color: #3bbaf7;
+}
+
+.dark-mode #NewsPreview a:hover {
+	color: whitesmoke;
 }
