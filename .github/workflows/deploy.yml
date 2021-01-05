@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: ${{ secrets.TARGET_DIR }} && ${{ secrets.SKIP_FILES }}
+    if: ${{ secrets.TARGET_DIR }}
     runs-on: ubuntu-latest
 
     steps:
