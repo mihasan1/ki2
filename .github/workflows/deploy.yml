@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-    if: ${{ secrets.TARGET_DIR }}
     runs-on: ubuntu-latest
 
     steps:
