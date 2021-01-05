@@ -1,5 +1,7 @@
 import React from "react";
 
+import Link from "gatsby-link";
+
 import { Message, MessageHeader, MessageBody, Content, Icon } from "bloomer";
 
 import Layout from "./../layouts/Layout";
@@ -18,7 +20,7 @@ const NotFoundPage: React.FC<PageWithLocation> = ({ location }) => (
 					<br />
 					<h4>Цієї сторінки не існує...</h4>
 					<br />
-					<a href="/main">Повернутися на головну</a>
+					<Link to="/">Повернутися на головну</Link>
 				</Content>
 			</MessageBody>
 		</Message>
