@@ -2,7 +2,7 @@
 	"title": "Київський авіаційний технікум",
 	"menu": [
 		{
-			"path": "main",
+			"path": "/",
 			"title": "Головна",
 			"icon_name": "fa fa-home fa-2x",
 			"child": null

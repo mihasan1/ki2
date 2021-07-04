@@ -1,32 +1,56 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-import { Cloud, Airplane } from "./../components/SkyObjects";
+import { Container, Columns, Column } from "bloomer";
 
 import Layout from "./../layouts/Layout";
+import { NewsPreview } from "./../components";
 
 import { PageWithLocation } from "./../types";
 
-export interface CloudProps {
-	children: React.ReactNode;
-}
+const MainPage: React.FC<PageWithLocation> = ({ location }) => {
+	const { edges } = useStaticQuery(graphql`
+		query {
+			allMarkdownRemark(
+				sort: { fields: frontmatter___date, order: DESC }
+				filter: {
+					frontmatter: { path: { ne: null }, date: { ne: null } }
+					fileAbsolutePath: { regex: "/news/" }
+				}
+			) {
+				edges {
+					node {
+						html
+						frontmatter {
+							date(formatString: "D MMMM, YYYY", locale: "uk_UA")
+							path
+							title
+						}
+					}
+				}
+			}
+		}
+	`).allMarkdownRemark;
 
-const Clouds: React.FC<CloudProps> = ({ children }) => (
-	<div className="clouds">{children}</div>
-);
+	// @ts-ignore
+	const news = edges.map(({ node }, index) => {
+		let { html, frontmatter } = node;
+		return (
+			<Column isSize="1/2" key={index}>
+				<NewsPreview html={html} {...frontmatter} />
+			</Column>
+		);
+	});
 
-const IndexPage: React.FC<PageWithLocation> = ({ location }) => (
-	<Layout location={location}>
-		<Airplane />
-		<Clouds>
-			<Cloud isSize="medium" isSpeed="slower" />
-			<Cloud isSize="massive" isSpeed="slowest" isDistance="distant" />
-			<Cloud isSize="big" isSpeed="super-slow" />
-			<Cloud isSize="big" isSpeed="super-slow" />
-			<Cloud isSize="big" isSpeed="super-slow" isDistance="background" />
-			<Cloud isSize="medium" isSpeed="slow" />
-			<Cloud isSize="big" isSpeed="super-slow" />
-		</Clouds>
-	</Layout>
-);
+	return (
+		<Layout location={location}>
+			<Container>
+				<Columns isGrid isMultiline isCentered>
+					{news}
+				</Columns>
+			</Container>
+		</Layout>
+	);
+};
 
-export default IndexPage;
+export default MainPage;

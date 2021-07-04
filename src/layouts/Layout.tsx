@@ -29,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 				className="layout"
 			>
 				<HeroBody
-					id={location.pathname === "/" ? "sky" : ""}
+					id={"" /*location.pathname === "/" ? "sky" : ""*/}
 					className="main-content"
 				>
 					{children}
